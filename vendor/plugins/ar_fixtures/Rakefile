@@ -1,0 +1,54 @@
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+desc 'Default: run unit tests.'
+task :default => [:clean, :test]
+
+desc "Delete test-generated files"
+task :clean do
+  %w(sqlite sqlite3).each do |db_name|
+    rm_f File.join(File.dirname(__FILE__), 'test', "plugin.#{db_name}.db")
+  end
+  rm_f File.join(File.dirname(__FILE__), 'test', 'debug.log')
+end
+
+desc 'Test the plugin.'
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = true
+end
+
+desc 'Generate documentation for the plugin.'
+Rake::RDocTask.new(:rdoc) do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title    = 'ActiveRecord Fixtures'
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+# 
+# def sort_files(glob, pattern)
+#   %(for f in #{glob}; do grep "#{pattern}" $f > x; sort x > y; if ! diff x y > z ; then echo $f; echo; cat z; fi; done; rm -f x y z)
+# end
+# 
+# namespace :zentest do
+# 
+#   desc "Generates test stub code for libraries"
+#   task :lib do
+#     tests = Dir["test/*_test.rb"]
+#     libs = Dir["lib/*.rb"]
+#     ruby "-S -I. ZenTest -r #{tests.join ' '} #{libs.join ' '}"
+#   end
+# 
+#   task :sort do
+#     sh sort_files('lib/*.rb', 'def ')
+#     sh sort_files('test/*_test.rb', 'def.test_')
+#   end
+# 
+#   task :audit_libs => [ :lib, :sort ]
+# 
+# end
+# 

@@ -1,0 +1,51 @@
+﻿<div class="Title24Orange" id="titlearea">
+  <%= link_to 'Ayuda', :action => 'help', :section => nil %>
+  <span class="Text18Orange">&gt;</span>
+  Cómo funcionar con <%= APP_NAME %>
+</div>
+
+<div id="highlightareaAyuda">
+  <div id="textareaAyuda">
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="el_que_gasta">El que gasta</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Los empleados tienen ahora una manera muy sencilla de ir apuntando los gastos en los que incurren. Además de apuntarlos utilizando <%= APP_NAME %>, deben guardar el justificante en una carpeta, clasificador, sobre, en fin donde más sea cómodo. Nosotros lo hemos llamado sobre, y solo hay que informar a <%= APP_NAME %> del sobre en el que hemos guardado el justificante. 
+    </div>
+  
+     
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" id="cuanto_tiempo">El que supervisa</span>
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Un supervisor podrá siempre que quiera revisar todos aquellos gastos que debe aprobar, y si esta conforme con ellos (que es lo que ocurre 95% de los casos) aprobarlos. Y si no lo esta deberá rechazar el gasto y explicar porque lo rechaza. Un gasto rechazado se queda en el sistema, pero no se utiliza para nada, únicamente quien lo creó puede ahora corregirlo. 
+    </div>
+
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" id="el_que_paga">El que paga</span>
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Los pagos en muchas empresas se hacen con la nómina, en <%= APP_NAME %> sólo hay que apuntar la cantidad pagada en concepto de gastos y ya está. En algunas empresas solo querrán pagar el saldo pendiente a favor del empleado. Para <%= APP_NAME %> da igual. El que paga sólo debe apuntar lo que haya pagado a cada empleado.
+    </div>
+
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" id="el_saldo">El saldo</span>
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Cada usuario ve siempre en la aplicación el saldo, que se calcula como gastos enviados + gastos aprobados - gastos rechazados - pagos realizados. 
+Si el saldo es positivo será a favor del empleado y si es negativo a favor de la empresa.
+    </div>
+
+    <div class="Text13Grey HelpItem">
+      <span class="Title18OrangeHelp" id="aprobado_o_rechazado">Gasto aprobado o rechazado</span>
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Cada usuario ve siempre en la aplicación el saldo, que se calcula como gastos enviados + gastos aprobados - gastos rechazados - pagos realizados. 
+Si el saldo es positivo será a favor del empleado y si es negativo a favor de la empresa.
+    </div>
+
+	  <%= date_una_vuelta_o_registrate %>
+  </div>  
+</div>
+
+

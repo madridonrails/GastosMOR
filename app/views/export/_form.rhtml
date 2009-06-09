@@ -1,0 +1,100 @@
+<%=display_errors :export %>
+
+<!--[form:export]-->
+<tr>
+  <td>
+    <div class='filter-row'>
+        <div class='filter-col'>
+            <span class='formhead'>¿Qu&eacute; quieres exportar?</span>
+        </div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div class='filter-row'>
+        <div class='filter-col'>
+        <%= check_box('export', 'expenses',{:checked => 'checked'}) %>Gastos
+        </div>
+        <div class='filter-col'>
+        <%= check_box('export', 'payments',{}) %>Pagos
+        </div>
+        <%if @current_user.supervised_projects_count >0 || @current_user.supervised_users_count > 0 -%>
+        <div class='filter-col'>
+        <%= check_box('export', 'supervised',{}) %>Incluir información de supervision
+        </div>
+        <% end -%>
+
+        <%if @current_user.is_administrator -%>
+        <div class='filter-col'>
+            <%= check_box('export', 'administrator',{}) %>Incluir TODA la informacion
+        </div>
+        <% end -%>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div class='filter-row'>
+        <div class='filter-col'>
+        <span class='formhead'>¿En qu&eacute; rango de fechas?</span>
+        </div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div class='filter-row'>
+        <div class='filter-col'>
+        <%= radio_button('export', 'range', 'all' , :checked => true)%> Todas
+        </div>
+        <div class='filter-col'>
+        <%= radio_button('export', 'range', 'dates')%>
+        </div>
+        <div class='filter-col'>
+        desde <%= dynarch_date_select 'export','start_date',:date_format => "%d/%m/%Y"%>
+        hasta <%= dynarch_date_select 'export', 'end_date',:date_format => "%d/%m/%Y"%>
+        </div>
+    </div>
+  </td>
+</tr>   
+<tr>
+  <td>
+    <div class='filter-row'>
+        <div class='filter-col'>
+        <span class='formhead'>¿De qu&eacute; proyectos?</span>
+        </div>
+        <div class='filter-col'>
+        <%= select 'export', 'project', [['Todos', nil]] + project_combo(@enterprise) %>
+        </div>
+    </div>
+    <% if @current_user.is_supervisor? -%>
+    <div class='filter-row'>
+        <div class='filter-col'>
+        <span class='formhead'>Si eres supervisor del proyecto seleccionado obtendrás el listado de gastos de ese proyecto</span>
+        </div>
+    </div>
+    <% end -%>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div class='filter-row'>
+        <div class='filter-col'>
+        <span class='formhead'>¿En qu&eacute; formato?</span>
+        </div>
+        <div class='filter-col'>
+        <%= radio_button('export', 'format','xls',:checked => true) %>Excel
+        <%= radio_button('export', 'format','csv') %>CSV
+        </div>
+    </div>
+    <div class="filter-row">
+         <div class="filter-col">
+           <%=submit_tag 'Exportar',:class => 'submit'%>
+         </div>
+    </div>
+  </td>
+</tr>
+
+
+<!--[eoform:user]-->

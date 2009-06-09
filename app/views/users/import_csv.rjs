@@ -1,0 +1,10 @@
+
+if @successful
+  page.remove 'import_row'
+  page.replace_html 'listado_usuarios', :partial => 'listado_usuarios'  
+else
+  page.hide loading_indicator_id('load-import')    
+  page.replace_html 'import_messages', :partial => 'form_messages'
+end
+
+

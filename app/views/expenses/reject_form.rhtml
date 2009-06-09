@@ -1,0 +1,28 @@
+<h1>Rechazar gasto</h1>
+<p><label for="date">Fecha</label>: <%=@expense.date%><br/></p>
+
+<p><label for="expense_amount">Cantidad</label>: <%=@expense.amount%><br/></p>
+
+<p><label for='expense_type_id'>Tipo de Gasto</label>: <%=@expense.expense_type ? @expense.expense_type.description : ''%><br /></p>
+
+<p><label for="description">Mensaje</label>: <%=@expense.description%><br/></p>
+
+<p><label for="user_id">Usuario</label>: <%=@expense.project ? display_user(@expense.user) : ''%><br/></p>
+
+<p><label for='project_id'>Proyecto</label>: <%=@expense.project ? @expense.project.name : ''%><br /></p>
+
+<p><label for="expense_envelope">Sobre</label>: <%=@expense.envelope%><br/></p>
+
+<% form_tag({:action => 'reject', :id => @expense}) do %>
+
+<p><label for="comments">¿Por qué se rechaza el gasto?</label><br/>
+<%= text_area 'expense', 'comments', :rows => "10" %></p>
+
+<%= hidden_field 'expense', 'revised_by', :value => @current_user %>
+
+<%= hidden_field 'expense', 'revised_at', :value => Time.now.to_s(:db) %>
+
+<%= submit_tag 'Denegar gasto' %>
+<% end %>
+
+<br />

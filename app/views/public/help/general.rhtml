@@ -1,0 +1,42 @@
+﻿<div class="Title24Orange" id="titlearea">
+  <%= link_to 'Ayuda', :action => 'help', :section => nil %>
+  <span class="Text18Orange">&gt;</span>
+  Funcionalidad general
+</div>
+
+<div id="highlightareaAyuda">
+  <div id="textareaAyuda">
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="alta">Si elegimos su servicio, ¿podré dar de alta a nuestros empleados, y a los jefes a los que reportan? </span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+Se pueden dar de alta tantos usuarios como sea necesario. Cada usuario tiene un supervisor que es quien puede aprobar sus gastos. El papel del usuario pagador está pensado para aquel que anota los pagos hechos.
+    </div>
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="alta_masiva">¿Se puede dar de alta masivamente a usuarios, gastos y pagos?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Si. Para ello basta con tener los datos a dar de alta en vuestra hoja de cálculo habitual, guardarlos en formato csv y acceder a la opción de importar csv que hay las pantallas de gestión de usuarios, gastos y pagos. Si seleccionáis dichas opciones podréis ver una ayuda con el formato exacto que han de tener los ficheros csv. Si tenéis cualquier duda o problema, no dudéis en comentarlo. 
+    </div>  
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="direccion_acceso_propia">¿Puede mi empresa tener su propia dirección de acceso?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Si. La página de acceso a <%= APP_NAME %> es siempre http://nombre_de_empresa.<%= DOMAIN_NAME %>
+<br />
+Algunos clientes han querido utilizar caracteres especiales en el nombre_de_empresa, y eso no está permitido por el funcionamiento del sistema de nombres en la red.
+nombre_de_empresa debe empezar por una letra, puede estar formado por letras y números, y los caracteres ”_” y ”-”, y tener una longitud máxima de 22 caracteres.
+    </div>      
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="recordar_url">He olvidado la URL de mi cuenta, ¿cómo puedo averiguarla?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+Cada cuenta en <%= APP_NAME %> tiene una URL personalizada del tipo http://alias_empresa.<%= DOMAIN_NAME %>.
+<br />
+Esta URL va incluida en el mail de alta y otros, pero puedes solicitar que te la enviemos en cualquier momento a la dirección de mail con la que te registraste. Para ello visita la página http://www.<%= DOMAIN_NAME %>/public/login .
+    </div>  
+	  <%= date_una_vuelta_o_registrate %>
+  </div>  
+</div>
+
+

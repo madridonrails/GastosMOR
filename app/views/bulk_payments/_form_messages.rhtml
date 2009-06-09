@@ -1,0 +1,5 @@
+<%= render :partial => 'messages' %>
+
+<% unless @bulk_payment.nil? %>
+<%= error_messages_for_scaffold 'bulk_payment' %>
+<% end %>

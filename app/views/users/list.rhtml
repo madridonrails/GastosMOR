@@ -1,0 +1,7 @@
+  <div id="tablaDatos">
+    <span class="titulo_secundario">Controla los diferentes usuarios y sus permisos </span>
+    <%= render :partial => 'help/bannerhelp',:locals=>{:page=>'users'}%>	
+    <div id='listado_usuarios'>
+      <%= render_component :controller => '/users', :action => 'component', :params => params %>
+    </div>
+  </div>

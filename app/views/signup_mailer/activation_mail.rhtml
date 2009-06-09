@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <title><%= APP_NAME %></title> 
+  </head> 
+  <body>
+    <br/>Muchas gracias por confiar en <%= APP_NAME %>. Un sólo paso más y enseguida podrás utilizar <%= APP_NAME %>.
+    <br/><br/>Ahora es necesario activar tu cuenta. 
+
+    <br/><br/>Para activar tu cuenta <%= APP_NAME %> sólo tienes que visitar este enlace:
+
+    <br/><br/><a href='<%= @activation_link %>'>Enlace activación</a>
+
+    <br/><br/>En ocasiones en los mails las direcciones largas quedan divididas. Si vieras que al
+    clicar no funciona puedes alternativamente acceder a la página
+
+    <br/><br/><a href='<%= @activation_page %>'><%= @activation_page %></a>
+
+    <br/><br/>e introducir manualmente tu código de activación
+
+    <br/><br/><%= @activation_code %>
+	
+    <br/><br/>Una vez activada tu cuenta ya podrás acceder a tu aplicación privada.
+
+    <br/><br/>Para ello solo tendrás que recordar tu dirección:
+
+    <br/><br/><a href='http://<%= h(@domain) %>.<%= DOMAIN_NAME %>'>http://<%= h(@domain) %>.<%= DOMAIN_NAME %></a>
+  
+    <br/><br/>y acceder con tu email
+
+    <br/><br/><%= h(@email) %>
+
+    <br/><br/>Saludos,
+
+    <br/><br/>-- <%= APP_NAME %>
+  </body>  
+</html> 

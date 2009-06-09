@@ -1,0 +1,15 @@
+<% require_bundle :dynarch_calendar, :color => 'ASPgems',:language => 'es' %>
+  <div id="tablaDatos">
+    <%= render :partial => 'help/bannerhelp',:locals=>{:page=>'export',:visible=>true}%>
+    <% @options = { :scaffold_id => 'enterprise', :action => "edit"}%>
+    <%= display_flash_notice %>
+    <%= display_flash_error %>
+    <%= error_messages (@enterprise.errors)%>
+    <%= form_tag :action => 'parse_form' %>  
+    <table width='100%'>
+      <tbody>          
+        <%= render :partial => 'form'%>
+      </tbody>
+    </table>
+    <%= end_form_tag %>
+  </div>

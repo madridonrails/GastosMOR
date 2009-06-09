@@ -1,0 +1,36 @@
+   <% 
+      action ||= 'component_update'      
+   %>
+   
+<%
+   pagination_params= params.merge(:controller => control, :action => action)   
+   #Hay que quitar los parametros del filtro, para que no salgan en la URL.
+   pagination_params.each { |key,value|
+     pagination_params.delete(key) if key.index('crt_') == 0 || (value.to_a.join(',').index('crt_') != nil )              
+    } 
+%>
+
+   <% indicator_params = pagination_params.merge(:action => 'pagination') %>
+   <%= loading_indicator_tag indicator_params %>
+   <%= link_to_remote(image_tag("flecha_inicio.gif", :hspacep => '3', :vspace => '5', :border => '0', :align => 'absmiddle'), 
+           { :url => pagination_params.merge(:page => paginator.first),
+           :loading => "Element.show('#{loading_indicator_id(indicator_params)}');",
+           :update => scaffold_content_id(pagination_params) },
+           { :href => url_for(pagination_params.merge(:page => paginator.first))}) unless @paginator.current == @paginator.first %>
+   <%= link_to_remote(image_tag("flecha_anterior.gif", :hspacep => '3', :vspace => '5', :border => '0', :align => 'absmiddle'), 
+           { :url => pagination_params.merge(:page => paginator.current.previous),
+           :loading => "Element.show('#{loading_indicator_id(indicator_params)}');",
+           :update => scaffold_content_id(pagination_params) },
+           { :href => url_for(pagination_params.merge(:page => paginator.current.previous))}) if @paginator.current.previous %>
+   <%= pagination_pages :paginator => @paginator %>
+   <%= link_to_remote(image_tag("flecha_siguiente.gif", :hspacep => '3', :vspace => '5', :border => '0', :align => 'absmiddle'), 
+           { :url => pagination_params.merge(:page => paginator.current.next),
+           :loading => "Element.show('#{loading_indicator_id(indicator_params)}');",
+           :update => scaffold_content_id(pagination_params) },
+           { :href => url_for(pagination_params.merge(:page => paginator.current.next))}) if @paginator.current.next %>
+   <%= link_to_remote(image_tag("flecha_ultima.gif", :hspacep => '3', :vspace => '5', :border => '0', :align => 'absmiddle'), 
+           { :url => pagination_params.merge(:page => paginator.last),
+           :loading => "Element.show('#{loading_indicator_id(indicator_params)}');",
+           :update => scaffold_content_id(pagination_params) },
+           { :href => url_for(pagination_params.merge(:page => paginator.last))}) unless @paginator.current == @paginator.last %>
+           

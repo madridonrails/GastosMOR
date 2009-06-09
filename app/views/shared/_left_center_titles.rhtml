@@ -1,0 +1,10 @@
+<%title_class=(local_assigns.has_key? :title_class) ? title_class:'titulo_principal'
+  subtitle_class=(local_assigns.has_key? :subtitle_class) ? subtitle_class:'titulo_secundario'
+-%>
+            <br />
+            <span class="<%=title_class%>"><%= title %></span>
+            <br />
+            <br /> 
+            <span class="<%=subtitle_class%>"><%= subtitle %></span>
+            <br />
+         

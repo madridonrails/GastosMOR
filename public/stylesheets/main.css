@@ -1,0 +1,167 @@
+/* Filtro*/
+div#persianaarriba {width:100%;clear:both;height:2px;background:#DAE0D2 url("/images/filter_line.gif") repeat-x bottom;}
+div#persianaabajo {width:100%;clear:both;height:2px;background:#DAE0D2 url("/images/filter_line.gif") repeat-x bottom;}
+
+div#filterproyectos {width:100%;clear:both;overflow:hidden;height:0px;}
+div#filter {width:100%;clear:both;overflow:hidden;height:0px;}
+.filter-row {float:left;clear:both;height:24px;width:100%;}
+.filter-col {float:left;clear:right;font-size:11px;}
+.filter-col label {font-size: 11px;vertical-align:middle;padding-left:5px;}
+.filter-col input.text-input {font-size: 11px;border: solid 1px #C5C5C5;}
+.filter-col select {font-size: 11px;border: solid 1px #C5C5C5;}
+.filter-col input {font-size: 11px;padding: 1px;vertical-align:middle;}
+.filter-col .submit {font-size: 11px;margin: 0px 0px 0px 5px;border: solid 1px #C5C5C5;}
+.filter-col fieldset {border: none;}
+
+/* Reports */
+.ajax-scaffold tr.reject td {border:solid 1px #bdf6d3;background: #bdf6d3;border-top: none;}
+/* Reports_user */
+.ajax-scaffold tr.detail-reportset-user td {border:solid 1px #bdf6d3;background:#bdf6d3;border-top: none;}
+
+.fieldWithErrors {
+	padding: 2px;
+	color: #252E6F;
+	text-decoration: none;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #CBCCE4;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+p{
+color: #000099;
+margin-left:10px;
+}
+
+/*SCAFFOLDs*/
+.ajax-scaffold form,
+.ajax-scaffold table,
+.ajax-scaffold p,
+.ajax-scaffold fieldset {margin: 0;padding: 0;}
+.ajax-scaffold {margin:0;}
+.ajax-scaffold table {width: 100%;}
+.ajax-scaffold div {margin: 0;padding: 0;}
+.ajax-scaffold a {color: #000000;text-decoration: none;}
+
+
+ /*titulo de las tablas*/
+.ajax-scaffold div.rico {background-color:#ffffff}
+.ajax-scaffold div.rico span.rico1{border-style:solid;border-color:#e5c3e5;border-width:0px 1px;overflow: hidden;background-color:#cc88cc; display: block;height:1px;font-size:1px;margin-left:1px;margin-right:1px;}
+.ajax-scaffold div.rico span.rico2{border-style:solid;border-color:#e5c3e5;border-width:0px 1px;overflow: hidden;background-color:#cc88cc; display: block;height:1px;font-size:1px;margin-left:0px;margin-right:0px;}
+.ajax-scaffold-header {background-color:#000000;position:relative;}
+.ajax-scaffold-header h2 {color:#ffffff;padding: 2px 5px 4px 5px;font-size:15px;font-weight:normal;margin:0px;}
+.ajax-scaffold-header div.actions a {color:#ffffff;font-size:11px;font-weight:bold;text-decoration:none;padding:1px 2px 1px 19px;}
+.ajax-scaffold-header div.actions a:hover {color:#662266;}
+.ajax-scaffold-header div.actions {position: absolute;right: 5px;top: 3px;width: 200px;text-align: right;}
+.ajax-scaffold-header div.actions img {margin-bottom: -3px;}
+.ajax-scaffold .ajax-scaffold {margin: 2px 5px;}
+.ajax-scaffold .ajax-scaffold .ajax-scaffold-header h2 {font-size:13px}
+.ajax-scaffold .ajax-scaffold .ajax-scaffold-header div.actions a {font-weight: bold; font-size:11px;padding: 0 2px 1px 17px;}
+.ajax-scaffold .ajax-scaffold .ajax-scaffold-header div.actions {top: 4px;}
+ /*cabeceras de las tablas*/ 
+.ajax-scaffold th{	
+font-family: Arial;font-size:11px; color:#000000; font-weight:bold;
+background-image: url(/images/bg_cabecera_tabla.gif);
+height: 22px;
+padding-left:5px
+ }
+.ajax-scaffold th {text-align:left;}
+.ajax-scaffold th a,
+.ajax-scaffold th p {font-size:11px;font-weight:bold;display: block;}
+.ajax-scaffold th a {color: #000000;padding: 2px 15px 2px 5px;}
+.ajax-scaffold th p {color: #000000;padding: 2px 5px;}
+/*cabecera y tabla ordenacion*/
+.ajax-scaffold th a:hover {color: #949494;}
+.ajax-scaffold th.asc a,
+.ajax-scaffold th.asc a:hover {color: #949494;background:  url("/images/ico_arrow_up.gif") right 50% no-repeat;}
+.ajax-scaffold th.desc a,
+.ajax-scaffold th.desc a:hover {color: #949494;background:  url("/images/ico_arrow_down.gif") right 50% no-repeat;}
+.ajax-scaffold th.loading a,
+.ajax-scaffold th.loading a:hover {color: #949494;background: url("/images/indicator-small.gif") right 50% no-repeat;}
+.ajax-scaffold tr td.sorted {background-color: #ADADAF;}
+.ajax-scaffold tr.even td.sorted {background-color: #C5C5C5;}
+.ajax-scaffold td.empty {color: #999999;text-align: center;}
+
+/*tabla*/
+.ajax-scaffold td {	
+font-family: Arial;font-size:10px; color:#000000;
+border-left: solid 1px #C5C5C5;
+padding:7px 5px;
+ }
+.ajax-scaffold tr.even td {background-color: #F3F1E9;}
+
+.ajax-scaffold td.empty {color: #999999;text-align: center;}
+/*acciones*/
+.ajax-scaffold td.actions {padding: 0;width: 1%;}
+.ajax-scaffold td.actions table {float: right;width: auto;margin-right: 5px;}
+.ajax-scaffold td.actions table td {border: none;text-align: right;padding: 0 2px;}
+.ajax-scaffold td.actions a {font-weight: bold; font-size:11px;letter-spacing: -1px;padding: 2px;margin: 0 2px;line-height: 16px;}
+/*pie*/
+.ajax-scaffold .ajax-scaffold-footer {
+font-family: Arial;font-size:10px; color:#000000;
+text-align:center
+}
+.ajax-scaffold-footer a {color: #000000;text-decoration: none;padding: 0 2px;margin: 0 -2px;font-weight: bold;}
+.ajax-scaffold-footer a:hover {font-weight:bold;}
+.ajax-scaffold-footer .next {margin-left: 0;padding-left: 5px;border-left: solid 1px #DD3F0D;}
+.ajax-scaffold-footer .previous {margin-right: 0;padding-right: 5px;border-right: solid 1px #DD3F0D;}
+
+/*formularios*/
+.ajax-scaffold td.update,
+.ajax-scaffold td.create {
+	background-color: #ADADAF;
+	border:1px solid #C5C5C5;
+	padding:4px; 
+}
+.ajax-scaffold .submit {font-size: 11px;margin: 7px 0px 0px 6px;}
+.ajax-scaffold fieldset {border: none;}
+.ajax-scaffold label.required{font-weight: bold;}
+.ajax-scaffold label.example {font-size: 11px;color: #C5C5C5;}
+.ajax-scaffold h4 {padding: 2px;margin: 0;text-transform: none;color: #000000;font-weight: bold;font-size:13px;}
+.ajax-scaffold p.form-footer a {font-weight: bold; font-size:11px;letter-spacing: 0;}
+.ajax-scaffold p {clear: both;}
+.ajax-scaffold div.row {clear: both;float: none;padding: 2px;margin-left: 5px;}
+.ajax-scaffold div.form-element {float: left;margin-right: 10px;margin-bottom: 2px;}
+.ajax-scaffold label {display: block;color: #000000;font-size: 11px;padding-bottom: 1px;}
+.ajax-scaffold input,
+.ajax-scaffold input.text-input,
+.ajax-scaffold select {font-size: 11px;border: solid 1px #C5C5C5;}
+.ajax-scaffold .form-element input {padding: 1px;}
+.ajax-scaffold textarea {height: 65px;font-size: 11px;padding: 1px;border: solid 1px #C5C5C5;}	
+
+/*Texto Errores */
+.ajax-scaffold .messages-container,
+.ajax-scaffold .ajax-scaffold .messages-container{padding: 0;margin: 0 7px;border: none;}
+.ajax-scaffold .empty-message {background-color: #e8e8e8;padding: 4px;text-align: center;color: #666;}
+.ajax-scaffold .message {font-size: 11px;font-weight: bold;padding: 5px 20px 5px 5px;color: #333;position: relative;margin: 2px 7px;line-height: 12px;}
+.ajax-scaffold .message a {position:absolute;right: 10px;top: 4px;padding: 0;font: bold 11px;letter-spacing: -1px;}
+.ajax-scaffold .messages-container .message {margin: 0;}
+.ajax-scaffold .error-message {border-left: solid 5px #f66;background-color: #fbb;}
+.ajax-scaffold .warning-message {border-left: solid 5px #ff6;background-color: #ffb;}
+.ajax-scaffold .info-message {border-left: solid 5px #66f;background-color: #bbf;}

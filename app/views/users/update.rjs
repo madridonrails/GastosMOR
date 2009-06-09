@@ -1,0 +1,18 @@
+@view_options = { :scaffold_id => params[:scaffold_id], :action => "view", :id => params[:id] }
+@update_options = @view_options.merge(:action => "update")
+
+if @successful
+  page.remove element_row_id(@view_options)
+  page.insert_html :bottom, scaffold_tbody_id(@view_options), :partial => 'user', :locals => { :hidden => true }  
+  page << "new TableRow.MoveAfter('#{element_row_id(@update_options)}', '#{element_row_id(@view_options)}');"
+  page.remove element_row_id(@update_options)
+  page.show element_row_id(@view_options)
+  page << "AjaxScaffold.stripe('#{scaffold_tbody_id(@view_options)}');" 
+  page << "AjaxScaffold.removeSortClasses('#{@view_options[:scaffold_id]}');"
+  page.replace_html scaffold_messages_id(@view_options), :partial => 'messages'
+else
+  page.replace_html element_messages_id(@update_options), :partial => 'form_messages'
+  page << "Form.enable('#{element_form_id(@update_options)}');"
+  page.hide loading_indicator_id(@update_options)
+end
+

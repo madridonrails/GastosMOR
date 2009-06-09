@@ -1,0 +1,69 @@
+<%= render :partial=>'login_box'%>
+
+          <div class="centrocentrohome">
+            <br/>
+            <span class="titulo_principal">Software como servicio</span>   
+<br/> <br/> 
+           <div class="respuesta">
+           El tiempo de los procesos de análisis, compra e instalación de complejas aplicaciones ha pasado. El modelo del venta del software como
+           un servicio se ha mostrado rotundamente superior. Las ventajas fundamentales son:
+            </div>
+            <br/>
+              <span class="titulos_cajas">sin inversión</span>
+              <br/>
+              <br/>    
+              <div class="respuesta">
+              El cliente paga por el uso que hace del software, y por tanto en función de la aportación
+              de valor real del mismo.
+              </div>           
+              <br/>
+            <span class="titulos_cajas">sin riesgos</span>
+              <br/>
+              <br/>    
+              <div class="respuesta">
+              Antes la inversión era tan importante que el riesgo de equivocarse era altísimo, y las
+              consecuencias también podían tener costes elevados.
+              <br/>
+              En este nuevo modelo no hay inversión inicial. El software esta operativo al 100% desde
+              el primer minuto.
+              </div> 
+            <br/>
+           <span class="titulos_cajas">sin mantenimiento ni infraestructura</span>
+            <br/>
+            <br/>
+               <div class="respuesta">
+                Sin inversión en hardware o infraestructura, sin preocuparse de los backups, ni de los firewalls. Nosotros nos ocupamos de todo.
+                Utilizamos las instalaciones más seguras del mercado.
+              </div>   
+             <br/>
+
+            <span class="titulo_secundario">No te quedes con dudas</span>
+            <br/>
+            <br/>
+                <div class="respuesta">
+                Consulta nuestra lista de
+                 <%= link_to("preguntas y respuestas", :controller => 'public', :action => 'faq') %> mas frecuentes.
+              </div> 
+              
+            <br/>
+            <br/>
+            <div class="cierre">
+              <%# link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:action=>'back'}) %>              
+              <%= link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:controller =>'public', :action=>'home'}) %> 
+            </div>
+          </div>
+
+      <% content_for(:tip_boxes) do %>        
+        <div class="box">
+          <div class="boxTop"><%= image_tag("px.gif", :height => '7') %></div>
+          <div class="boxInner">
+            <span class="titulo_tercer"><%= APP_NAME %>:<br/> <br/>La solución.</span>    
+            <div class="titulo_sector">Sin inversión </div>
+            <div class="titulo_sector">Sin riesgos</div>
+            <div class="titulo_sector">Sin mínimos de contratación</div>
+            <div class="titulo_sector">Sin compromisos</div>
+            <div class="titulo_sector">Con la mejor tecnología</div>
+            <div class="titulo_sector">Con la mejor infraestructura</div>
+          </div>
+        </div>
+      <% end %>

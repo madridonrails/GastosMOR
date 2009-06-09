@@ -1,0 +1,45 @@
+Se trata de una aplicacion para gestionar lo que tradicionalmente se lleva con hojas de gastos en empresas.
+
+Proyectos
+---------
+Un proyecto solo tiene un nombre, aparte de relaciones. Todo gasto esta asociado a un usuario y a un proyecto. Todo proyecto tiene a lo sumo un supervisor.
+
+Gastos
+------
+Cada gasto tiene los atributos que pueden verse en la aplicacion, y esta asociado a un usuario y proyecto. Un gasto puede estar en uno de tres estados:
+
+  * Enviado
+  * Aprobado
+  * Rechazado
+
+Un usuario solo puede modificar aquellos de sus gastos que estan en estado "enviado". Los supervisores pueden cambiar el gasto de estado. El estado "aprobado"/"rechazado" es siempre editable para un supervisor. De manera que se puede rechazar algo que se aprobo (puede pasar que se de cuenta de algo mas tarde, o se equivoque).
+
+Al aprobar un gasto hay que verificar que en paralelo su importe no fue cambiado por el usuario, un campo oculto en la pantalla del supervisor sera suficiente.
+
+Los gastos se guardan como numeros enteros = parte entera + dos digitos para centesimas, 0-padded por la derecha como sea necesario. El input de numeros asumira castellano de momento.
+
+Los usuarios podran descargar un Excel con sus gastos y el saldo.
+
+Tipos de Usuario
+----------------
+Hay tres tipos de usuario, administrador, supervisor, normal (buscar mejor nombre). El administrador puede hacer el CRUD de modelos basicos como usuarios, proyectos, y asociaciones entre ellos. Cada usuario tiene flags de administrador y supervisor independientes. Desde un punto de vista logico un usuario normal puede ser administrador, pero el formulario de creacion de usuarios tiene ese valor a falso por defecto.
+
+Solo puede borrarse un proyecto si no tiene ningun gasto asociado (para permitir errores en su creacion). No hay mantenimiento de historico separado. Los usuarios y supervisores asociados a un proyecto pueden cambiar, pero los gastos asociados a un proyecto quedan asi para siempre. En particular, si se quieren recuperar los gastos asociados a un proyecto no puede asumirse que el usuario y supervisores asociados al gasto forman parte del proyecto en ese momento.
+
+No se pueden borrar usuarios con gastos en la base de datos por un motivo similar.
+
+Alternativamente, el borrado de cualquiera de estos modelos conlleva el borrado de los gastos asociados. Hablarlo.
+
+Los supervisores pueden aprobar o rechazar un gasto, un supervisor lo es de los gastos asociados a uno o mas proyectos. Un usuario solo puede reportar a los proyectos a los que esta vinculado.
+
+Saldo
+-----
+Un usuario normal tiene un saldo que puede ser positivo o negativo. Un supervisor puede dar anticipos a los usuarios de los proyectos que supervisa. El saldo se calcula de esta manera
+
+def balance
+  # Note that ''.to_i and nil.to_i give 0.
+  total_pending  = expenses.find_all_by_status(ExpenseStatus::PENDING).inject {|sum, e| sum + e.amount.to_i}
+  total_approved = expenses.find_all_by_status(ExpenseStatus::APPROVED).inject {|sum, e| sum + e.amount.to_i}
+  total_payments = payments.inject {|sum, p| p.amount.to_i}    
+  total_payments - (total_pending + total_approved)
+end

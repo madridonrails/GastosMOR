@@ -1,0 +1,43 @@
+﻿<div class="Title24Orange" id="titlearea">
+  <%= link_to 'Ayuda', :action => 'help', :section => nil %>
+  <span class="Text18Orange">&gt;</span>
+  Sobre los gastos
+</div>
+
+<div id="highlightareaAyuda">
+  <div id="textareaAyuda">
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="cambiar_datos">¿Puedo cambiar los datos de mis gastos?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+Sí. <%= APP_NAME %> te deja cambiar todos los datos que quieras, al fin y al cabo son tus datos. 
+    </div>
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="anticipo">¿Como se apunta un anticipo?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+En <%= APP_NAME %> un anticipo es igual que cualquier otro pago. El saldo de cada usuario hace que un pago pudiera ser un anticipo. Es decir, si no has apuntado ningún gasto y se apunta un pago, ese pago es un anticipo.
+    </div>
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="proyectos">¿Para que sirven los Proyectos?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            En muchas empresas la organización de los costes se hace por proyectos. <%= APP_NAME %> permite identificar a que proyecto pertenece un gasto.
+Pero si en tu empresa no hacéis proyectos, puedes considerar un proyecto como un centro de coste cualquiera, por ejemplo, asociarlo con un departamento.
+En realidad nosotros hemos puesto el nombre de proyecto, pero podrías llamarlo centro de coste o departamento...
+    </div>  
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="gestionar_recibos">¿Cómo se gestionan los recibos y otros justificantes físicos?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Cada gasto tiene asociado un atributo llamado “sobre” cuyo cometido es ayudar con una simple etiqueta en la organización de justificantes.
+<br/>
+
+Por ejemplo, si asigna a un taxi el sobre “Mi Nombre – Febrero 2007” puede luego emplear un sobre físico con esa etiqueta para agrupar sus gastos de febrero de 2007, incluir en él el ticket del taxi, y una vez finalizado el mes entregarlo a quien deba revisar esos justificantes.
+Si en su empresa existe otra manera de organizar los justificantes puede interpretar y usar el campo “sobre” de otro modo, o no tenerlo en cuenta.
+    </div>  
+	  <%= date_una_vuelta_o_registrate %>
+  </div>  
+</div>
+
+

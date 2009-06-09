@@ -1,0 +1,21 @@
+     <div class="centroizquierdohome">
+            <%= image_tag("px.gif", {:width => '40', :height => '15'}) %>
+            <div class="box">
+               <div class="boxTop">
+                   <%= image_tag("px.gif", :height => '7') %>
+                </div>
+                <div class="boxInner">                    
+                   <%= image_tag("claim_registro.gif", {:width => '180', :height => '145'}) %>
+                <br/>    
+                Crea tu cuenta en pocos segundos y empieza a disfrutar ahora mismo de <%= APP_NAME %>,
+                gratuitamente y sin l&iacute;mite de tiempo.
+                      <div class="derecha"><%= image_tag("arrow.gif") %>&nbsp;&nbsp;<%= link_to('Reg&iacute;strate', {:controller => 'public', :action=>'signup'}, {:class => 'entexto'}) %>
+                      </div>
+                <br/>    
+                &iquest;Ya tienes tu cuenta?
+                               <div class="derecha"><%= image_tag("arrow.gif") %>&nbsp;&nbsp;
+                               <%= link_to('Accede', {:controller => 'public', :action=>'login'}, {:class => 'entexto'}) %>
+                               </div>
+                 </div>  
+            </div>
+          </div>

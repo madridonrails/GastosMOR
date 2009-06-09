@@ -1,0 +1,75 @@
+<%= render :partial=>'login_box'%>
+
+          <div class="centrocentrohome">
+          <br/>
+            <span class="titulo_principal">Lo que dicen nuestros clientes</span>   
+          <br/>
+            <br/>
+            <span class="titulo_secundario">Genial</span>   
+            <br/>
+            <br/>
+               <div class="respuesta">Simplemente genial por la facilidad de manejo. Por fin alguien ha tenido la simple pero
+               brillante idea de "acabar" con las hojas de calculo para este
+              tipo de tareas.
+              <br/>
+              <br/>
+              Como supervisor de los gastos de ungran número de empleados, la tarea de control ha dejado de ser una
+              pesadilla para convertirse en una rutina que me exige el m&iacute;nimo esfuerzo. He dejado de tener quejas
+              de mi equipo por gastos pendientes de cobrar.<br/>
+             </div>
+             <br/>
+            <span class="titulo_secundario">Ideal para vagos</span>
+            <br/>
+            <br/>
+            <div class="respuesta"> Antes se me olvidaba a menudo rellenar debidamente las hojas de gastos y acababa
+             tambi&eacute;n por perder alg&uacute;n que otro recibo. Ahora como me cuesta tan poco trabajo apuntar los gastos,
+              tengo m&aacute;s controlados los recibos y sus respectivos sobres.
+              Lo que hace que me paguen mucho antes y todo lo que he gastado.
+              <br/>
+            </div>
+            <br/>            
+            <span class="titulo_secundario">Perfecto para viajeros</span>
+            <br/>
+            <br/>             
+            <div class="respuesta"> Lo mejor, para m&iacute; que viajo continuamente, es el no tener que estar f&iacute;sicamente
+             en la oficina para reportar los gastos que surgen.<br/>
+              Lo "hago" en el aeropuerto, en el hotel, desde casa y desde cualquier punto donde pueda conectarme a Internet.<br/>
+              &iquest;Para cuando la posibilidad de conectarse con la PDA? Mantenedme informado.<br/>
+            </div>
+             <br/>
+            <span class="titulo_secundario">Colaboración con la gestoría</span>
+            <br/>
+            <br/>              
+            <div class="respuesta"> Mi gestor&iacute;a me ha felicitado. Por fin entrego
+            los datos a tiempo, y además ellos pueden verlos en tiempo real por Internet.
+            </div>
+            <br/>
+             <span class="titulo_secundario">El freelance</span>      
+             <br/>
+             <br/>         
+            <div class="respuesta"> Mi gestor&iacute;a no selo creía, ahora le entrego 
+            los datos a tiempo en lugar de última hora, y en vez del
+            papel a la que les ten&iacute;a acostumbrados ahora se lo mando por correo electrónico.
+            Lo que no saben es que lo hace todo <%= APP_NAME %> y que no me cuesta dinero, porque para mi como freelance, 
+            la versi&oacute;n de evaluaci&oacute;n gratuita alcanza y sobra. Gracias.
+            </div>
+            <br/><br/>
+            <div class="cierre">
+              <%# link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:action=>'back'}) %>              
+              <%= link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:controller =>'public', :action=>'home'}) %> 
+              </div>
+          </div>
+
+      <% content_for(:tip_boxes) do %>        
+        <div class="box">
+          <div class="boxTop"><%= image_tag("px.gif", :height => '7') %></div>
+          <div class="boxInner">
+            <span class="titulo_tercer"><%= APP_NAME %>:<br/> <br/>La solución</span>    
+            <div class="titulo_sector">Accesos redundantes</div>
+            <div class="titulo_sector">Sistemas de alimentación redundantes</div>
+            <div class="titulo_sector">Seguridad física</div>
+            <div class="titulo_sector">Con la mejor tecnología</div>
+            <div class="titulo_sector">Con la mejor infraestructura</div>
+          </div>
+        </div>
+      <% end %>

@@ -1,0 +1,9 @@
+  <div class="bloque">
+    <p>
+      <%= check_box_tag 'accept_terms' %>
+      acepto las <span class="Text130Orange"><%= link_to("condiciones de uso", {:controller => 'public', :action => 'terms'}, {:class => 'entexto'}) %></span>
+    </p>
+    <div class="cierre">
+      <%= submit_tag 'Registrar', :class => 'button' %>
+    </div>
+  </div>

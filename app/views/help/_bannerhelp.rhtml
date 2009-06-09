@@ -1,0 +1,11 @@
+<div id='bannerayuda' class='bannerayuda' style='display:block;'>
+<span class="titulos_cajas">Si tienes alguna duda puedes ir a nuestra</span>&nbsp;<%= link_to('página de ayuda',{:controller=>'help',:action=>'show',:id=>page},{:class=>'big'})%> 
+<br/>En pocos minutos con nuestra p&aacute;gina de ayuda podras comprobar lo f&aacute;cil y r&aacute;pido que es manejar tu gesti&oacute;n de pagos.
+</div>
+<% 
+visible ||= false    
+unless visible %>
+<script>
+Element.hide('bannerayuda');
+</script>
+<%    end  %>

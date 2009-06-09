@@ -1,0 +1,40 @@
+  <div id="topLinks">
+    <span class="titulos_cajas">¿sabes que puedes?</span><br/>
+    <br/>  
+    <% if params[:action] == 'list_pending'%>
+      <strong>Ordenar</strong> los gastos haciendo click en las columnas.
+      <hr/>
+      <strong>Editar</strong> cualquier gasto que tengas que aprobar o rechazar para poder
+      variar sus campos, introducir algun comentario, motivos de rechazo, o 
+      cualquier opinion que creas conveniente que quede reflejada en el gasto..
+      <hr/>
+      <strong>Filtrar</strong> la informaci&oacute;n que aparece en la tabla para y ver solo los
+      que quieras. 
+      <hr/> 
+      <strong>Aprobar o Rechazar </strong> un gasto con un solo click en los iconos que 
+      hay en el listado.
+      <hr/>
+      <strong>Saber</strong> que significan los iconos pasando el rat&oacute;n 
+      por encima.
+    <% else %>
+      <strong>Ordenar</strong> los gastos haciendo click en las columnas.
+      <hr/>
+      <strong>Copiar</strong> un gasto y pegarlo para gestionar gastos que se repiten.
+      <hr/>
+      <strong>Editar</strong> cualquier gasto que hayas rellenado anteriormente y modificarlo.
+      <hr/>
+      <strong>Filtrar</strong> la informaci&oacute;n que aparece en la tabla. 
+      <hr/> 
+      <strong>Añadir</strong> un nuevos gastos, simplemente haciendo click en el botón de añadir.
+      <hr/>
+      <strong>Exportar</strong> a una hoja de cáculo los gastos que quieras desde la 
+      pesta&ntilde;a de exportar.
+      <hr/>
+      <strong>Saber</strong> en cada momento qu&eacute; son los iconos pasando el rat&oacute;n
+      por encima del mismo                 
+    <%end%>
+  </div>
+  <div id="bottLinks"></div>
+
+
+ 

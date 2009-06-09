@@ -1,0 +1,18 @@
+<% require_bundle :dynarch_calendar, :color => 'ASPgems',:language => 'es' %>
+<% if request.xhr? %>
+  <%= render_component :action => 'component', :params =>{:str_conditions => @str_conditions, :arr_conditions_params=>@arr_conditions_params}%>
+<% else %>
+  <div id="tablaDatos">
+    <% if !@current_user.is_gestor? %>
+      <span class="titulo_secundario">Aprueba o rechaza los gastos que dependen de ti</span><br/>
+    <% end %>
+    <%= display_flash_notice %>
+    <%= render :partial => 'help/bannerhelp',:locals=>{:page=>'list_pending'} %>
+    <a href="expandir filtro" class="botonerasup" target="_blank" onclick="document.getElementById('filter').style.height='155px'; return false;">Filtrar la información<%=image_tag("ico_filtrar.gif",:title=>'filtrar',:alt=>"filtrar",:vspace=>"5", :border=>"0",:align=>"absmiddle")%></a>
+    <%= render :partial => 'filter_pending' %> 
+    <div id="listing_all">
+      <%= render_component :action => 'component'%>
+    </div>
+  </div>
+<% end #if request.xhr%>
+

@@ -1,0 +1,34 @@
+            <%=display_errors :account_owner%>
+            <div class="bloque">
+             <div class="Title14Orange">Datos del usuario administrador</div>
+             <div id="divider"><%= image_tag 'px.gif' %></div>
+             <br />
+             <div style='clear:left'>
+                <div class="caja215">Nombre <span class="obligatorio">*</span><br/>
+                  <%= text_field 'account_owner', 'first_name', :class => 'formField' %>
+                </div>
+                <div class="caja215">Apellidos <span class="obligatorio">*</span><br/>
+                  <%= text_field 'account_owner', 'last_name', :class => 'formField' %>
+                </div>
+             </div>   
+             <div style='clear:left'>
+                <div class="caja215">Email <span class="obligatorio">*</span><br/>
+                  <%= text_field 'account_owner', 'email', :class => 'formField' %>
+                </div>
+                <div class="caja215">Confirmaci&oacute;n de email <span class="obligatorio">*</span><br/>
+                  <%= text_field 'account_owner', 'email_confirmation', :class => 'formField' %>
+                </div>  
+             </div>
+             <div style='clear:left'>           
+                <div class="caja215">Contrase&ntilde;a <span class="obligatorio">*</span><br/>
+                  <%= password_field 'account_owner', 'password', :class => 'formField' %>
+                </div>
+                <div class="caja215">Confirmaci&oacute;n de contrase&ntilde;a <span class="obligatorio">*</span><br/>
+                  <%= password_field 'account_owner', 'password_confirmation', :class => 'formField' %>
+                </div>
+                <div class="caja215">
+                  Pa&iacute;s <span class="obligatorio">*</span><br/>
+                  <%= select 'enterprise', 'country_id', countries, {:prompt => 'Selecciona un país'}, {:class => 'formField'}%>                 
+                </div>                                         
+              </div>
+            </div>

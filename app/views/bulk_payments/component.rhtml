@@ -1,0 +1,39 @@
+<% if @show_wrapper %>
+<div id="<%= params[:scaffold_id] %>" class="ajax-scaffold">
+  <div id="<%= scaffold_content_id(params) %>">
+<% end %>    
+  <table cellpadding="0" cellspacing="0">
+  <thead>  
+    <tr> 
+      <%= render :partial => 'column_headings' %>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="<%= num_columns %>" class="messages-container">
+        <div id="<%= scaffold_messages_id(params) %>">
+          <%= render :partial => 'messages' %>
+        </div>
+        <p id="<%= empty_message_id(params) %>" class="empty-message" <%= " style=\"display:none;\" " if !@bulk_payments.empty? %>>
+          No existen pagos (comprueba que no exista un filtro activo) <%=', para incluir pagos pulsa sobre el bot&oacute;n de a&ntilde;adir' if @page_payer && @current_user.is_payer? %>          
+        </p>      
+      </td>
+    </tr>
+  </tbody>  
+  <tbody id='import_form'>          
+  </tbody>
+  <tbody id="<%= scaffold_tbody_id(params) %>">
+    <% if !@bulk_payments.empty? %>
+  	  <%= render :partial => 'bulk_payment', :collection => @bulk_payments, :locals => { :hidden => false } %>
+    <%elsif @page_payer && @current_user.is_payer?%>       
+	<%= render :partial => 'help/showbannerhelp'%>
+    <%end%>
+  </tbody>
+</table>
+<div class="ajax-scaffold-footer">
+  <%= render :partial => 'shared/pagination_links', :locals => { :paginator => @paginator, :control => 'bulk_payments' } %>
+</div>
+<% if @show_wrapper %>
+</div>
+</div>
+<% end %>

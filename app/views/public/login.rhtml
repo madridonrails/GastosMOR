@@ -1,0 +1,44 @@
+<div class="Title24Orange" id="titlearea">
+  Accede a tu cuenta de <%= APP_NAME %>
+</div>
+
+<div id="highlightarea2">
+  <div id="textarea">
+    <p class="Title18Grey">Recuerda tu URL privada</p>
+    <%= display_flash_error %>
+    <%= display_flash_notice %>  
+    <div class="respuesta"><p class="Text16greyHelp" >Para acceder a tu cuenta de <%= APP_NAME %> has de dirigirte a
+      la direcci&oacute;n privada que te enviamos cuando la creaste. Es una
+      URL de este estilo:</p>
+      <p class="Text16greyHelp">&nbsp;&nbsp;&nbsp;&nbsp;http://<strong>alias_empresa</strong>.<%= DOMAIN_NAME %></p>
+      <% form_tag :action => 'login' do %>
+      <p class="Text16greyHelp">Puedes ir directamente a tu página con aquella URL, pero puedes acceder
+      desde aquí también si lo deseas:</p>
+      <p class="Title14Orange">Alias de empresa: <%= text_field_tag "short_name", nil, :class => 'formField' %>
+        <%= submit_tag 'Acceder', :class => 'button' %>
+      <% end %>
+      <br />
+      <br />
+      </p>
+    </div>
+
+    <p style="width: 750px; height: 20px; border-bottom: 1px solid #ccc"></p>
+    <div class="titulo_sector"><p class="Title18Grey">&iquest;No recuerdas la direcci&oacute;n de tu cuenta?</p></div>
+    <div class="respuesta"><p class="Text16greyHelp">
+        Si no recuerdas la dirección de acceso a tu cuenta, recuerda que al crear tu cuenta 
+        te mandamos un
+        mail con tu dirección privada, pero, si quieres, 
+        ind&iacute;canos la direcci&oacute;n de correo con la que est&aacute;s dado de alta 
+        y te enviaremos un mail con las instrucciones de acceso.</p>
+    </div>
+        <div id='domains'>
+          <% form_tag :action => 'subdomains' do %>
+            <label for="email" class="Title14Orange">Email: <%= text_field_tag "email", nil, :class => 'formField' %></label>&nbsp;&nbsp;<%= submit_tag 'Enviar', :class => 'button' %>
+          <% end %>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+  </div>
+</div>

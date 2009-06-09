@@ -1,0 +1,10 @@
+
+== May 20, 2006
+
+* Added to_skeleton for writing fieldnames only. [Gunther Schmidl]
+* Added initial tests, thanks to Scott Barron's acts_as_state_machine
+
+== Jan 12 2006
+
+* Added code to handle single table inheritance. May need to be modified for non-standard use of STI.
+

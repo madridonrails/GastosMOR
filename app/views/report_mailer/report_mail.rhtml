@@ -1,0 +1,13 @@
+<% # All data comes from Report model  %>
+
+* ALTAS DE EMPRESAS:
+---------------------
+<% @signups.each do |enterprise| -%>
+	<%= render :partial => './enterprise', :locals => {:enterprise => enterprise} %>
+<% end -%>
+
+* ACTUALIZACIONES:
+-------------------
+<% @updates.each do |enterprise| -%>
+	<%= render :partial => './enterprise', :locals => {:enterprise => enterprise} %>
+<% end -%>

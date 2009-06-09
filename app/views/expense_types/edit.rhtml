@@ -1,0 +1,8 @@
+<h1>Editar tipo de gasto</h1>
+
+<% form_tag :action => 'update', :id => @expense_type do %>
+  <%= render :partial => 'form', :locals => { :expense_type => @expense_type }%>
+  <%= submit_tag 'Guardar' %>
+<% end %>
+
+<%= link_to 'Descartar cambios', :action => 'list' %>

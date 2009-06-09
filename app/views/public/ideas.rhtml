@@ -1,0 +1,89 @@
+<%= render :partial=>'login_box'%>
+
+          <div class="centrocentrohome">
+            <br/>
+            <span class="titulo_principal">Como funcionar con <%= APP_NAME %></span>   
+           <br/>
+          <div class="respuesta">
+           Trabajar con <%= APP_NAME %> es muy fácil, solo necesitas acordar el significado de algunos conceptos.
+           Aunque si prefieres usarlos de otro modo nos encantará aprender y saber de ellos.
+          </div>
+        <br/>
+        <span class="titulos_cajas">El que gasta </span>
+          <div class="respuesta">      
+           Los empleados tienen ahora una manera muy sencilla de ir apuntando los gastos en los que incurren. 
+           Además de apuntarlos utilzando <%= APP_NAME %>, deben guardar el justificante en una carpeta, clasificador,
+           sobre, en fin donde más 
+           sea cómodo. Nosotros lo hemos llamado sobre, y solo hay que informar a <%= APP_NAME %> del sobre en el que hemos guardado el 
+           justificante.
+          </div>         
+           <br/>
+              <span class="titulos_cajas">El que supervisa</span>
+              <br/>
+              <div class="respuesta">
+         Un supervisor podrá siempre que quiera revisar todos aquellos gastos que debe aprobar, y si esta conforme con
+         ellos (que es lo que ocurre 95% de los casos) aprobarlos. Y si no lo esta deberá rechazar el gasto
+         y explicar porque lo rechaza.
+         Un gasto rechazado se queda en el sistema, pero no se utiliza para nada, únicamente quien lo creó
+         puede ahora corregirlo.
+              </div>           
+              <br/>
+            <span class="titulos_cajas">El que paga</span>
+              <br/>
+              <div class="respuesta">
+              Los pagos en muchas empresas se hacen con la nómina, en <%= APP_NAME %> sólo hay que apuntar la cantidad
+              pagada en concepto de gastos y ya está.
+              En algunas empresas solo querrán pagar el saldo pendiente a favor del empleado. Para <%= APP_NAME %> da igual. El que paga sólo debe
+              apuntar lo que haya pagado a cada empleado. 
+              </div> 
+            <br/>
+           <span class="titulos_cajas">El saldo</span>
+           <br/>
+           <div class="respuesta">
+             Cada usuario ve siempre en la aplicación el saldo, que se calcula como
+             gastos enviados + gastos aprobados - gastos rechazados - pagos realizados.
+             <br/>
+             Si el saldo es positivo será a favor del empleado y si es negativo a favor de la empresa.
+           </div>   
+           <br/>
+
+           <span class="titulos_cajas">Gasto aprobado o rechazado</span>
+            <br/>
+               <div class="respuesta">
+               Cuando un usuario introduce los datos de un gasto en el sistema, éste pasa al estado de enviado.
+               Después un supervisor podra aceptarlo o rechazarlo. Si es aceptado, ya no se podrá modificar
+               (bueno se puede, pero mejor hazte a la idea de que no), y si por el contrario es rechazado,
+               ese gasto, no se utilizará mas en el sistema
+               salvo para que el usuario que lo creó lo pueda corregir.
+              </div>   
+             <br/>
+            <span class="titulo_secundario">No te quedes con dudas</span>
+            <br/>
+                <div class="respuesta">
+            Consulta nuestra <%= link_to("FAQ", {:controller => 'public', :action => 'faq'}, :class => 'entexto') %>
+            donde encontrarás la respuesta a las preguntas mas frecuentes.O enivanos un mail en la página de
+            <%= link_to("contacto", {:controller => 'public', :action => 'contact'}, :class => 'entexto') %>.
+             </div> 
+              
+            <br/>
+            <br/>
+            <div class="cierre">
+              <%# link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:action=>'back'}) %>              
+              <%= link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:controller =>'public', :action=>'home'}) %> 
+            </div>
+          </div>
+
+      <% content_for(:tip_boxes) do %>        
+        <div class="box">
+          <div class="boxTop"><%= image_tag("px.gif", :height => '7') %></div>
+          <div class="boxInner">
+            <span class="titulo_tercer"><%= APP_NAME %>:<br/> La solución.</span>    
+            <div class="titulo_sector">Sin inversión </div>
+            <div class="titulo_sector">Sin riesgos</div>
+            <div class="titulo_sector">Sin mínimos de contratación</div>
+            <div class="titulo_sector">Sin compromisos</div>
+            <div class="titulo_sector">Con la mejor tecnología</div>
+            <div class="titulo_sector">Con la mejor infraestructura</div>
+          </div>
+        </div>
+      <% end %>

@@ -1,0 +1,50 @@
+<html>
+<head>
+    <%= theme_stylesheet_link_tag 'main' %>
+    
+    <%= javascript_include_tag :defaults %>    
+    <%= javascript_include_tag "commissions" %>
+    <%= stylesheet_auto_link_tags %>
+    <%= javascript_auto_include_tags %>  
+      
+    <%= javascript_include_tag 'ajax_scaffold' %>
+<%
+if params[:submitted_already]
+%>
+<script language="javascript">
+    window.close()
+</script>
+<%    
+end
+%>
+</head>
+<body>
+<BR/>
+<div id="justification_div" class="ajax-scaffold">
+ <div class="ajax-scaffold-header">
+      <div class="actions">  
+      </div>
+      <h2>Justificante</h2>
+  </div>
+  <table class="ajax-scaffold" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+        <td>
+<%= form_tag ( {:action => 'update_justification', :id => @expense}, {:multipart => true} )%>        
+          <%= hidden_field 'expense', 'id' %>
+          <%= hidden_field_tag 'submitted_already', 'true' %>
+          Adjuntar justificante para el gasto: <%= @expense.description %><BR/><BR/>
+          Fichero: <%= file_field 'expense', 'justification'%>
+          <BR/><BR/>
+          &nbsp;&nbsp;&nbsp;<%= submit_tag 'Enviar'%>
+<%= end_form_tag %>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+Rico.Corner.round('justification_div', {color: '#005CB8', bgColor: '#fff', compact: true});
+</script>
+</body>
+</html>

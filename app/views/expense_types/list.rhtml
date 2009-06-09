@@ -1,0 +1,16 @@
+<% require_bundle :dynarch_calendar,:language => 'es',:color => 'ASPgems' %>
+<div id="tablaDatos">
+  <span class="titulo_secundario">Define los tipos de gastos </span>
+  <%= render :partial => 'help/bannerhelp',:locals=>{:page=>'expenses_types'}%>
+  <% new_params = params.merge(:controller => '/expense_types', :action => 'new') %>
+  <br/><br/><%= loading_indicator_tag(new_params) %>
+  <%= link_to_remote "Añadir un nuevo tipo de gasto"+image_tag("ico_mas.gif",:title=>'nuevo tipo de gasto',:alt=>"nuevo tipo de gasto",:vspace=>"5", :border=>"0",:align=>"absmiddle"),
+          { :url => new_params,
+            :loading => "Element.show('#{loading_indicator_id(new_params)}');" },
+          { :href => url_for(new_params),
+            :class => "botonerasup" } %>                                      
+        <%= display_flash_notice %>
+  <div id="component">
+    <%= render_component :action => 'component', :params => params %>
+  </div>
+</div>

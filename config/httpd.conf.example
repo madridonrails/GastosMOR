@@ -1,0 +1,37 @@
+<Proxy balancer://gastosgem_cluster>
+    BalancerMember http://127.0.0.1:3010
+    BalancerMember http://127.0.0.1:3011
+    BalancerMember http://127.0.0.1:3012
+</Proxy>
+
+NameVirtualHost *:80
+<VirtualHost *:80>
+    ServerName www.gastosgem.local
+    ServerAlias *.gastosgem.local
+    ServerAdmin admin@gastosgem.local
+  
+    DocumentRoot /Users/fxn/aspgems/prj/gastosgem/public
+    <Directory '/Users/fxn/aspgems/prj/gastosgem'>
+      Options FollowSymLinks
+      AllowOverride None
+      Order allow,deny
+      Allow from all
+    </Directory>
+
+    ProxyPass / balancer://gastosgem_cluster/
+    ProxyPassReverse / balancer://gastosgem_cluster/
+
+    # Setup your Rewrite rules here
+    RewriteEngine On
+
+    # Rewrite index to check for static
+    RewriteRule ^/$ /index.html [QSA]
+
+    # Send all requests that are not found as existing files to the cluster
+    RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} !-f
+    RewriteRule ^/(.*)$ balancer://gastosgem_cluster%{REQUEST_URI} [P,QSA,L]
+
+    # Error logs
+    ErrorLog /Users/fxn/aspgems/prj/gastosgem/log/apache_error_log
+    CustomLog /Users/fxn/aspgems/prj/gastosgem/log/apache_access_log combined
+</VirtualHost>

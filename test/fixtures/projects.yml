@@ -1,0 +1,33 @@
+--- 
+general_1: 
+  description: "Proyecto general"
+  description_for_sorting: "proyecto general"
+  enterprise_id: 1
+  id: 1
+  name: General
+  name_for_sorting: general
+  supervisor_id: 1
+proyecto_1: 
+  description: "Proyecto 1"
+  description_for_sorting: "proyecto 1"
+  enterprise_id: 1
+  id: 2
+  name: "Proyecto 1"
+  name_for_sorting: "proyecto 1"
+  supervisor_id: 1
+proyecto_2: 
+  description: "Proyecto 2"
+  description_for_sorting: "proyecto 2"
+  enterprise_id: 1
+  id: 3
+  name: "Proyecto 2"
+  name_for_sorting: "proyecto 2"
+  supervisor_id: 4
+general_2: 
+  description: "Proyecto general"
+  description_for_sorting: "proyecto general"
+  enterprise_id: 2
+  id: 4
+  name: General
+  name_for_sorting: general
+  supervisor_id: 6

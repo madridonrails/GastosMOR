@@ -1,0 +1,44 @@
+<% if @show_wrapper %>
+<div id="<%= params[:scaffold_id] %>" class="ajax-scaffold">
+  <div id="<%= scaffold_content_id(params) %>">
+<% end %>
+    <div class="ajax-scaffold-header"></div>
+  <table cellpadding="0" cellspacing="0">
+  <thead>  
+    <tr> 
+      <%= render :partial => 'column_headings' %>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="<%= num_columns %>" class="messages-container">
+        <div id="<%= scaffold_messages_id(params) %>">
+          <%= render :partial => 'messages' %>
+        </div>
+        <p id="<%= empty_message_id(params) %>" class="empty-message" <%= " style=\"display:none;\" " if !@bulk_expenses.empty? %>>
+          <% if request.xhr? %>
+          No hay resultados para la busqueda (comprueba que no exista un filtro activo)
+          <% else %>
+          Sin gastos, para incluir gastos pulsa sobre el boton de añadir
+          <% end %>
+          
+        </p>      
+      </td>
+    </tr>
+  </tbody> 
+  <tbody id='import_form'>          
+  </tbody> 
+  <tbody id="<%= scaffold_tbody_id(params) %>">
+    <%= render :partial => 'help/showbannerhelp' if @bulk_expenses.empty?%>
+    <% if !@bulk_expenses.empty? %>  	  
+  	  <%= render :partial => 'bulk_expense', :collection => @bulk_expenses, :locals => { :hidden => false } %>  	  
+    <% end %>
+  </tbody>
+</table>
+<div class="ajax-scaffold-footer">
+  <%= render :partial => 'shared/pagination_links', :locals => { :paginator => @paginator, :control => 'bulk_expenses' } %>
+</div>
+<% if @show_wrapper %>
+</div>
+</div>
+<% end %>

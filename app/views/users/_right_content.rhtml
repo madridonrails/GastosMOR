@@ -1,0 +1,29 @@
+  <div id="topLinks">
+  <% if params[:action] == 'profile' || params[:action]=='save_profile'%>
+    <span class="titulos_cajas">¿sabes que puedes?</span><br/>
+    <br/>	
+    <strong>Cambiar</strong> tú información personal: email, nombre y apellidos
+    <hr/>
+    <strong>Modificar</strong> tú password de acceso a la aplicación. En este caso se te pedirá
+    la password actual y una confirmación para la nueva.
+  <% else %>
+    <span class="titulos_cajas">¿sabes que puedes?</span><br/>
+    <br/>	
+    <strong>Ordenar</strong> el listado de usuarios haciendo click en las columnas. .
+    <hr/>
+    <strong>Editar</strong> cualquier usuario que hayas creado anteriormente y modificarlo para poder
+    gestionar los diferentes permisos que posee o si ha cambiado de supervisor, o lo que quieras.
+    <hr/>
+    <strong>Filtrar</strong> la informaci&oacute;n que aparece en la tabla para poder ver los usuarios
+    seg&uacute;n el criterio que desees. 
+    <hr/> 
+    <strong> A&ntilde;adir</strong> un nuevo usuario mediante el icono de a&ntilde;adir usuario y
+    verlo en el listado inmediatamente.
+    <hr/>
+    <strong>Eliminar</strong> usuario si te has equivocado al rellenarlo, si deseas darlo de baja o
+    por el motivo que creas conveniente.
+    <hr/>
+    <strong>Saber</strong> en cada momento que son los iconos pasando el rat&oacute;n por encima del mismo
+  <%end%>
+  </div>
+  <div id="bottLinks"></div>

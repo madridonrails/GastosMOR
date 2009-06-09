@@ -1,0 +1,39 @@
+<% if @show_wrapper %>
+<div id="<%= params[:scaffold_id] %>" class="ajax-scaffold">
+  <div id="<%= scaffold_content_id(params) %>">
+<% end %>
+    
+  <table cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <%= render :partial => 'column_headings' %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="<%= num_columns %>" class="messages-container">
+        <div id="<%= scaffold_messages_id(params) %>">
+          <%= render :partial => 'messages' %>
+        </div>
+        <p id="<%= empty_message_id(params) %>" class="empty-message" <%= " style=\"display:none;\" " if !@projects.empty? %>>
+          Sin proyectos, para incluir pagos pulsa sobre el bot&oacute;n de a&ntilde;adir
+        </p>
+      </td>
+    </tr>
+  </tbody>
+  <tbody id="<%= scaffold_tbody_id(params) %>">
+    <% if !@projects.empty? %>
+      <%= render :partial => 'project', :collection => @projects, :locals => { :hidden => false } %>
+    <%else%>
+        <%= render :partial => 'help/showbannerhelp'%>
+    <%end%>
+  </tbody>
+</table>
+<div class="ajax-scaffold-footer">
+  <%= render :partial => 'shared/pagination_links', :locals => { :paginator => @paginator, :control => 'projects' } %>
+</div>
+<% if @show_wrapper %>
+</div>
+</div>
+
+<% end %>

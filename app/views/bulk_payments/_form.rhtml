@@ -1,0 +1,33 @@
+<fieldset>
+	<div class="row">
+		<!--[form:bulk_payment]-->
+<div class="form-element">
+  <label for="bulk_payment_date">Fecha</label>
+  <%=dynarch_date_select 'bulk_payment', 'date',:date_format => "%d/%m/%Y"%>
+</div>
+
+<div class="form-element">
+  <label for="bulk_payment_amount">Cantidad</label>
+  <%= text_field 'bulk_payment', 'amount' , {:class=>"text-input",:value => format_money(@bulk_payment.amount)} %>
+</div>
+
+<div class="form-element">
+  <label for="bulk_payment_concept">Concepto</label>
+  <%= text_field_with_auto_complete 'bulk_payment', 'concept' , {:class=>"text-input"}, :skip_style => true %>
+</div>
+
+<div class="form-element">
+  <label for="bulk_payment_user_id">Pagado a</label>
+  <%= select 'bulk_payment', 'user_id', user_combo(@enterprise) %>
+</div>
+
+
+<div class="form-element">
+  <label for="bulk_payment_description">Descripci&oacute;n</label>
+  <%= text_area 'bulk_payment', 'description' , {:class=>"text-input"} %>
+</div>
+
+<!--[eoform:bulk_payment]-->
+
+	</div>
+</fieldset>

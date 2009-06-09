@@ -1,0 +1,50 @@
+﻿<div class="Title24Orange" id="titlearea">
+  <%= link_to 'Ayuda', :action => 'help', :section => nil %>
+  <span class="Text18Orange">&gt;</span>
+  Acerca de <%= APP_NAME %>
+</div>
+
+<div id="highlightareaAyuda">
+  <div id="textareaAyuda">
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="como_nace">¿Cómo nace <%= APP_NAME %>?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            <%= APP_NAME %> ha sido creada para resolver el problema de la gestión de los gastos de los empleados. La implantación en minutos de una solución tan sencilla como <%= APP_NAME %> puede ayudarte a reducir tus gastos, porque mejorará el control. 
+    </div>
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="ventajas">¿Qué ventaja ofrece <%= APP_NAME %> frente a una hoja de cálculo?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Precisamente, la de no ser una hoja de cálculo. <%= APP_NAME %> es una aplicación enfocada única y exclusivamente a la gestión de reportes de gastos y diseñada para simplificar al máximo las tareas de sus usuarios. Ni cálculos ni fórmulas, simplemente introducir los datos, elegir a que categoría corresponden y asignarlos a un proyecto. Tan fácil e intuitivo es comprobar cobros pendientes, pagos aceptados, saldo actual como supervisar y validar solicitudes de reembolso.
+    </div>  
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="asp">¿Qué es un ASP?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            ASP son las siglas de «Application Service Provider», en castellano «proveedor de aplicaciones como servicios», y describe aquellas aplicaciones informáticas que son utilizadas por los clientes como un servicio. Sus ventajas fundamentales son: 
+<!-- override the naked style inherited at this point for lists -->
+<ul>
+<li>Pagas sólo según lo usas, no hay inversión. </li>
+<li>Sin instalación: tú te olvidas y nosotros nos encargamos de toda la parte técnica. </li>
+<li>Sin mantenimiento: sigue olvidándote de los detalles, nosotros nos ocupamos. </li>
+<li>Modelo en red de acceso: disfruta de la ventajas de las aplicaciones en la red, accesible en cualquier momento, desde cualquier ordenador, sólo necesitas un navegador. </li>
+</ul>
+    </div>  
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="usarlo_fuera_espana">¿Puedo usar <%= APP_NAME %> sin estar en España?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Claro que sí. Al ser una aplicación online, puedes acceder a ella cuando y desde donde quieras. Solo necesitas una conexión a internet. 
+    </div>  
+    <div class="Text13Grey HelpItem">
+	    <span class="Title18OrangeHelp" id="cuanto_guardamos_gastos">¿Durante cuanto tiempo se guardan los gastos?</span> 
+      <%= ir_al_principio %>
+	    <%= help_answer_separator %>
+            Siempre, salvo que tú indiques lo contrario. Tus facturas estarán guardadas en nuestros servidores hasta que tú decidas que las borremos, o lo hagas tú mismo a través de la aplicación. Siempre de acuerdo con la legislación vigente. 
+    </div>  
+	  <%= date_una_vuelta_o_registrate %>
+  </div>  
+</div>
+
+

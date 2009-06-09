@@ -1,0 +1,37 @@
+--- 
+foo: 
+  account_owner_id: 1
+  address: Calle
+  cif: 12345678Z
+  city: Ciudad
+  country_id: 71
+  created_at: 2007-02-01 19:04:20 +01:00
+  extensions: ~
+  id: 1
+  is_active: false
+  is_blocked: false
+  logo: ~
+  name: Foo
+  postal_code: 08001
+  province: Provincia
+  short_name: foo
+  theme: default
+  updated_at: 2007-02-05 18:33:14 +01:00
+bar: 
+  account_owner_id: 4
+  address: ~
+  cif: ""
+  city: ~
+  country_id: 71
+  created_at: 2007-02-05 18:38:19 +01:00
+  extensions: ~
+  id: 2
+  is_active: false
+  is_blocked: false
+  logo: ~
+  name: Bar
+  postal_code: ~
+  province: ~
+  short_name: bar
+  theme: default
+  updated_at: 2007-02-05 18:38:19 +01:00

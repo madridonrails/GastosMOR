@@ -1,0 +1,49 @@
+== Integral Mailer
+
+Integral Mailer is a Ruby on Rails plugin that lets you send email to remote hosts without the aid of a full-blown MTA like Sendmail. It works by doing a lookup of the MX server for the destination email and delivering the message directly to that mail server.
+
+Thanks to Dan Kubb's new MXLookup.for_domain() implementation, the dependency on the 'dig' command line tool has been removed. Integral Mailer should now be cross-platform.
+
+Right now it's experimental, and probably more useful in a development environment. However, if you use it in production please be sure to let me know of your success (or lack thereof).
+
+== Installation
+
+./script/plugin install http://svn.integralserver.com/plugins/integral_mailer
+
+or, if you're using svn and would rather add it as an external:
+
+./script/plugin install -x http://svn.integralserver.com/plugins/integral_mailer
+
+== Configuration
+
+The goal was to keep the configuration as simple as possible. You can start sending mail by adding one line to environment.rb:
+
+config.action_mailer.delivery_method = :integral_mailer
+
+However, you should probably also add a second line which sets the value for the "HELO" command when connecting to the remote SMTP host. The value should be your domain name.
+
+config.action_mailer.server_settings = { :helo => 'foo.com' }
+
+== Reverse DNS
+
+This isn’t specific to Integral Mailer, but you should also make sure you have reverse DNS setup properly for the IP address you’re running this on. Otherwise, some mail servers will refuse to accept your mail (or give you a high spam score). Setting up reverse DNS usually involves sending an email request to your hosting provider.
+
+== Troubleshooting
+
+You'll notice a new log file in your 'log' directory called integral_mailer.log. If you have any trouble sending mail, check this log for errors.
+
+One common issue is that some ISPs block all outgoing traffic on port 25. If this is the case for you, and you can't have that "feature" turned off, you're screwed. This won't work for you and there's no way around it.
+
+== Suggestions
+
+Send them to ben@integralimpressions.com.
+
+== Copyright
+
+Copyright (c) 2006 Ben Myles & Integral Impressions
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

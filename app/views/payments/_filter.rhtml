@@ -1,0 +1,49 @@
+<% if !request.xhr? %>
+<div id="filter" >
+
+<%= form_remote_tag :url => {:controller=>'bulk_payments', :action=> 'list'}, 
+    :update => 'listing_sinfondoazul'%>
+    <div id="persianaarriba"></div> 
+    <a href="recoger filtro" target="_blank" onclick="document.getElementById('filter').style.height='0px'; return false;"><%= image_tag("filter_close.gif", {:title=>'cerrar',:alt=>"cerrar",:align => 'right',:border=>'0'}) %></a>
+    <div class="filter-row">
+         <div class="filter-col">
+            <label>Fecha del pago desde:&nbsp;</label>          
+            <%=check_box_tag 'crt_date_from', 1, false %>
+            <%=dynarch_date_select 'payment', 'crt_date_from',:date_format => "%d/%m/%Y"%>
+         </div>
+         <div class="filter-col">
+            <label>hasta:&nbsp;</label>         
+            <%=check_box_tag 'crt_date_to', 1, false %>
+            <%=dynarch_date_select 'payment', 'crt_date_to',:date_format => "%d/%m/%Y"%>
+         </div>
+    </div>
+    <div class="filter-row">
+         <%if @page_payer %>
+         <div class="filter-col">
+            <label>Pagado a:&nbsp;</label>
+         </div>         
+         <div class="filter-col">
+           <%= select_tag 'crt_user_id' , options_for_select([nil] + @user_combo) %>
+         </div>
+         <% end %>
+         <% if !@page_payer || (@page_payer && (@current_user.is_administrator? || @current_user.is_gestor?) ) %>
+         <div class="filter-col">
+            <label>Pagador:&nbsp;</label>
+         </div>         
+         <div class="filter-col">
+           <%= select_tag 'crt_ordered_by' , options_for_select([nil] + @user_combo) %>
+         </div>
+         <% end %>
+    </div>
+ 
+     <div class="filter-row">
+         <div class="filter-col">
+           <%=submit_tag "Filtrar",:class => "submit"%>
+         </div>
+     </div>
+     
+    <div id="persianaabajo" >             
+    </div>
+  <%=end_form_tag%>
+</div>
+<% end%>

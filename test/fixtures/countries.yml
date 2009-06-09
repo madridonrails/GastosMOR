@@ -1,0 +1,730 @@
+--- 
+afganistán: 
+  id: 1
+  name: Afganistán
+albania: 
+  id: 3
+  name: Albania
+alemania: 
+  id: 4
+  name: Alemania
+andorra: 
+  id: 5
+  name: Andorra
+angola: 
+  id: 6
+  name: Angola
+anguilla: 
+  id: 7
+  name: Anguilla
+antigua_y_barbuda: 
+  id: 9
+  name: "Antigua y Barbuda"
+antillas_holandesas: 
+  id: 10
+  name: "Antillas Holandesas"
+antártida: 
+  id: 8
+  name: Antártida
+arabia_saudí: 
+  id: 11
+  name: "Arabia Saudí"
+argelia: 
+  id: 12
+  name: Argelia
+argentina: 
+  id: 13
+  name: Argentina
+armenia: 
+  id: 14
+  name: Armenia
+aruba: 
+  id: 15
+  name: Aruba
+ary_macedonia: 
+  id: 131
+  name: "ARY Macedonia"
+australia: 
+  id: 16
+  name: Australia
+austria: 
+  id: 17
+  name: Austria
+azerbaiyán: 
+  id: 18
+  name: Azerbaiyán
+bahamas: 
+  id: 19
+  name: Bahamas
+bahréin: 
+  id: 20
+  name: Bahréin
+bangladesh: 
+  id: 21
+  name: Bangladesh
+barbados: 
+  id: 22
+  name: Barbados
+belice: 
+  id: 25
+  name: Belice
+benin: 
+  id: 26
+  name: Benin
+bermudas: 
+  id: 27
+  name: Bermudas
+bhután: 
+  id: 28
+  name: Bhután
+bielorrusia: 
+  id: 23
+  name: Bielorrusia
+bolivia: 
+  id: 29
+  name: Bolivia
+bosnia_y_herzegovina: 
+  id: 30
+  name: "Bosnia y Herzegovina"
+botsuana: 
+  id: 31
+  name: Botsuana
+brasil: 
+  id: 33
+  name: Brasil
+brunéi: 
+  id: 34
+  name: Brunéi
+bulgaria: 
+  id: 35
+  name: Bulgaria
+burkina_faso: 
+  id: 36
+  name: "Burkina Faso"
+burundi: 
+  id: 37
+  name: Burundi
+bélgica: 
+  id: 24
+  name: Bélgica
+cabo_verde: 
+  id: 38
+  name: "Cabo Verde"
+camboya: 
+  id: 40
+  name: Camboya
+camerún: 
+  id: 41
+  name: Camerún
+canadá: 
+  id: 42
+  name: Canadá
+chad: 
+  id: 44
+  name: Chad
+chile: 
+  id: 46
+  name: Chile
+china: 
+  id: 47
+  name: China
+chipre: 
+  id: 48
+  name: Chipre
+ciudad_del_vaticano: 
+  id: 234
+  name: "Ciudad del Vaticano"
+colombia: 
+  id: 50
+  name: Colombia
+comoras: 
+  id: 51
+  name: Comoras
+corea_del_norte: 
+  id: 55
+  name: "Corea del Norte"
+corea_del_sur: 
+  id: 56
+  name: "Corea del Sur"
+costa_de_marfil: 
+  id: 57
+  name: "Costa de Marfil"
+costa_rica: 
+  id: 58
+  name: "Costa Rica"
+croacia: 
+  id: 59
+  name: Croacia
+cuba: 
+  id: 60
+  name: Cuba
+dinamarca: 
+  id: 61
+  name: Dinamarca
+dominica: 
+  id: 62
+  name: Dominica
+ecuador: 
+  id: 64
+  name: Ecuador
+egipto: 
+  id: 65
+  name: Egipto
+el_salvador: 
+  id: 66
+  name: "El Salvador"
+emiratos_Árabes_unidos: 
+  id: 67
+  name: "Emiratos Árabes Unidos"
+eritrea: 
+  id: 68
+  name: Eritrea
+eslovaquia: 
+  id: 69
+  name: Eslovaquia
+eslovenia: 
+  id: 70
+  name: Eslovenia
+españa: 
+  id: 71
+  name: España
+estados_unidos: 
+  id: 72
+  name: "Estados Unidos"
+estonia: 
+  id: 74
+  name: Estonia
+etiopía: 
+  id: 75
+  name: Etiopía
+filipinas: 
+  id: 77
+  name: Filipinas
+finlandia: 
+  id: 78
+  name: Finlandia
+fiyi: 
+  id: 79
+  name: Fiyi
+francia: 
+  id: 80
+  name: Francia
+gabón: 
+  id: 81
+  name: Gabón
+gambia: 
+  id: 82
+  name: Gambia
+georgia: 
+  id: 83
+  name: Georgia
+ghana: 
+  id: 85
+  name: Ghana
+gibraltar: 
+  id: 86
+  name: Gibraltar
+granada: 
+  id: 87
+  name: Granada
+grecia: 
+  id: 88
+  name: Grecia
+groenlandia: 
+  id: 89
+  name: Groenlandia
+guadalupe: 
+  id: 90
+  name: Guadalupe
+guam: 
+  id: 91
+  name: Guam
+guatemala: 
+  id: 92
+  name: Guatemala
+guayana_francesa: 
+  id: 93
+  name: "Guayana Francesa"
+guernesey: 
+  id: 94
+  name: Guernesey
+guinea: 
+  id: 95
+  name: Guinea
+guinea-bissau: 
+  id: 97
+  name: Guinea-Bissau
+guinea_ecuatorial: 
+  id: 96
+  name: "Guinea Ecuatorial"
+guyana: 
+  id: 98
+  name: Guyana
+haití: 
+  id: 99
+  name: Haití
+honduras: 
+  id: 101
+  name: Honduras
+hong_kong: 
+  id: 102
+  name: "Hong Kong"
+hungría: 
+  id: 103
+  name: Hungría
+india: 
+  id: 104
+  name: India
+indonesia: 
+  id: 105
+  name: Indonesia
+iraq: 
+  id: 107
+  name: Iraq
+irlanda: 
+  id: 108
+  name: Irlanda
+irán: 
+  id: 106
+  name: Irán
+isla_bouvet: 
+  id: 32
+  name: "Isla Bouvet"
+isla_de_man: 
+  id: 139
+  name: "Isla de Man"
+isla_de_navidad: 
+  id: 157
+  name: "Isla de Navidad"
+isla_norfolk: 
+  id: 163
+  name: "Isla Norfolk"
+islandia: 
+  id: 109
+  name: Islandia
+islas_caimán: 
+  id: 39
+  name: "Islas Caimán"
+islas_cocos: 
+  id: 49
+  name: "Islas Cocos"
+islas_cook: 
+  id: 54
+  name: "Islas Cook"
+islas_feroe: 
+  id: 76
+  name: "Islas Feroe"
+islas_georgias_del_sur_y_sandwich_del_sur: 
+  id: 84
+  name: "Islas Georgias del Sur y Sandwich del Sur"
+islas_heard_y_mcdonald: 
+  id: 100
+  name: "Islas Heard y McDonald"
+islas_malvinas: 
+  id: 138
+  name: "Islas Malvinas"
+islas_marianas_del_norte: 
+  id: 140
+  name: "Islas Marianas del Norte"
+islas_marshall: 
+  id: 142
+  name: "Islas Marshall"
+islas_pitcairn: 
+  id: 176
+  name: "Islas Pitcairn"
+islas_salomón: 
+  id: 188
+  name: "Islas Salomón"
+islas_turcas_y_caicos: 
+  id: 225
+  name: "Islas Turcas y Caicos"
+islas_ultramarinas_de_estados_unidos: 
+  id: 73
+  name: "Islas ultramarinas de Estados Unidos"
+islas_vírgenes_británicas: 
+  id: 237
+  name: "Islas Vírgenes Británicas"
+islas_vírgenes_de_los_estados_unidos: 
+  id: 238
+  name: "Islas Vírgenes de los Estados Unidos"
+islas_Åland: 
+  id: 2
+  name: "Islas Åland"
+israel: 
+  id: 110
+  name: Israel
+italia: 
+  id: 111
+  name: Italia
+jamaica: 
+  id: 112
+  name: Jamaica
+japón: 
+  id: 113
+  name: Japón
+jersey: 
+  id: 114
+  name: Jersey
+jordania: 
+  id: 115
+  name: Jordania
+kazajistán: 
+  id: 116
+  name: Kazajistán
+kenia: 
+  id: 117
+  name: Kenia
+kirguistán: 
+  id: 118
+  name: Kirguistán
+kiribati: 
+  id: 119
+  name: Kiribati
+kuwait: 
+  id: 120
+  name: Kuwait
+laos: 
+  id: 121
+  name: Laos
+lesotho: 
+  id: 122
+  name: Lesotho
+letonia: 
+  id: 123
+  name: Letonia
+liberia: 
+  id: 125
+  name: Liberia
+libia: 
+  id: 126
+  name: Libia
+liechtenstein: 
+  id: 127
+  name: Liechtenstein
+lituania: 
+  id: 128
+  name: Lituania
+luxemburgo: 
+  id: 129
+  name: Luxemburgo
+líbano: 
+  id: 124
+  name: Líbano
+macao: 
+  id: 130
+  name: Macao
+madagascar: 
+  id: 132
+  name: Madagascar
+malasia: 
+  id: 133
+  name: Malasia
+malawi: 
+  id: 134
+  name: Malawi
+maldivas: 
+  id: 135
+  name: Maldivas
+malta: 
+  id: 137
+  name: Malta
+malí: 
+  id: 136
+  name: Malí
+marruecos: 
+  id: 141
+  name: Marruecos
+martinica: 
+  id: 143
+  name: Martinica
+mauricio: 
+  id: 144
+  name: Mauricio
+mauritania: 
+  id: 145
+  name: Mauritania
+mayotte: 
+  id: 146
+  name: Mayotte
+micronesia: 
+  id: 148
+  name: Micronesia
+moldavia: 
+  id: 149
+  name: Moldavia
+mongolia: 
+  id: 151
+  name: Mongolia
+montserrat: 
+  id: 152
+  name: Montserrat
+mozambique: 
+  id: 153
+  name: Mozambique
+myanmar: 
+  id: 154
+  name: Myanmar
+méxico: 
+  id: 147
+  name: México
+mónaco: 
+  id: 150
+  name: Mónaco
+namibia: 
+  id: 155
+  name: Namibia
+nauru: 
+  id: 156
+  name: Nauru
+nepal: 
+  id: 158
+  name: Nepal
+nicaragua: 
+  id: 159
+  name: Nicaragua
+nigeria: 
+  id: 161
+  name: Nigeria
+niue: 
+  id: 162
+  name: Niue
+noruega: 
+  id: 164
+  name: Noruega
+nueva_caledonia: 
+  id: 165
+  name: "Nueva Caledonia"
+nueva_zelanda: 
+  id: 166
+  name: "Nueva Zelanda"
+níger: 
+  id: 160
+  name: Níger
+omán: 
+  id: 167
+  name: Omán
+pakistán: 
+  id: 169
+  name: Pakistán
+palau: 
+  id: 170
+  name: Palau
+palestina: 
+  id: 171
+  name: Palestina
+panamá: 
+  id: 172
+  name: Panamá
+papúa_nueva_guinea: 
+  id: 173
+  name: "Papúa Nueva Guinea"
+paraguay: 
+  id: 174
+  name: Paraguay
+países_bajos: 
+  id: 168
+  name: "Países Bajos"
+perú: 
+  id: 175
+  name: Perú
+polinesia_francesa: 
+  id: 177
+  name: "Polinesia Francesa"
+polonia: 
+  id: 178
+  name: Polonia
+portugal: 
+  id: 179
+  name: Portugal
+puerto_rico: 
+  id: 180
+  name: "Puerto Rico"
+qatar: 
+  id: 181
+  name: Qatar
+reino_unido: 
+  id: 182
+  name: "Reino Unido"
+república_centroafricana: 
+  id: 43
+  name: "República Centroafricana"
+república_checa: 
+  id: 45
+  name: "República Checa"
+república_del_congo: 
+  id: 52
+  name: "República del Congo"
+república_democrática_del_congo: 
+  id: 53
+  name: "República Democrática del Congo"
+república_dominicana: 
+  id: 63
+  name: "República Dominicana"
+reunión: 
+  id: 183
+  name: Reunión
+ruanda: 
+  id: 184
+  name: Ruanda
+rumania: 
+  id: 185
+  name: Rumania
+rusia: 
+  id: 186
+  name: Rusia
+sahara_occidental: 
+  id: 187
+  name: "Sahara Occidental"
+samoa: 
+  id: 189
+  name: Samoa
+samoa_americana: 
+  id: 190
+  name: "Samoa Americana"
+san_cristóbal_y_nevis: 
+  id: 191
+  name: "San Cristóbal y Nevis"
+san_marino: 
+  id: 192
+  name: "San Marino"
+san_pedro_y_miquelón: 
+  id: 193
+  name: "San Pedro y Miquelón"
+san_vicente_y_las_granadinas: 
+  id: 194
+  name: "San Vicente y las Granadinas"
+santa_helena: 
+  id: 195
+  name: "Santa Helena"
+santa_lucía: 
+  id: 196
+  name: "Santa Lucía"
+santo_tomé_y_príncipe: 
+  id: 197
+  name: "Santo Tomé y Príncipe"
+senegal: 
+  id: 198
+  name: Senegal
+serbia_y_montenegro: 
+  id: 199
+  name: "Serbia y Montenegro"
+seychelles: 
+  id: 200
+  name: Seychelles
+sierra_leona: 
+  id: 201
+  name: "Sierra Leona"
+singapur: 
+  id: 202
+  name: Singapur
+siria: 
+  id: 203
+  name: Siria
+somalia: 
+  id: 204
+  name: Somalia
+sri_lanka: 
+  id: 205
+  name: "Sri Lanka"
+suazilandia: 
+  id: 206
+  name: Suazilandia
+sudáfrica: 
+  id: 207
+  name: Sudáfrica
+sudán: 
+  id: 208
+  name: Sudán
+suecia: 
+  id: 209
+  name: Suecia
+suiza: 
+  id: 210
+  name: Suiza
+surinam: 
+  id: 211
+  name: Surinam
+svalbard_y_jan_mayen: 
+  id: 212
+  name: "Svalbard y Jan Mayen"
+tailandia: 
+  id: 213
+  name: Tailandia
+taiwán: 
+  id: 214
+  name: Taiwán
+tanzania: 
+  id: 215
+  name: Tanzania
+tayikistán: 
+  id: 216
+  name: Tayikistán
+territorio_británico_del_océano_Índico: 
+  id: 217
+  name: "Territorio Británico del Océano Índico"
+territorios_australes_franceses: 
+  id: 218
+  name: "Territorios Australes Franceses"
+timor_oriental: 
+  id: 219
+  name: "Timor Oriental"
+togo: 
+  id: 220
+  name: Togo
+tokelau: 
+  id: 221
+  name: Tokelau
+tonga: 
+  id: 222
+  name: Tonga
+trinidad_y_tobago: 
+  id: 223
+  name: "Trinidad y Tobago"
+turkmenistán: 
+  id: 226
+  name: Turkmenistán
+turquía: 
+  id: 227
+  name: Turquía
+tuvalu: 
+  id: 228
+  name: Tuvalu
+túnez: 
+  id: 224
+  name: Túnez
+ucrania: 
+  id: 229
+  name: Ucrania
+uganda: 
+  id: 230
+  name: Uganda
+uruguay: 
+  id: 231
+  name: Uruguay
+uzbekistán: 
+  id: 232
+  name: Uzbekistán
+vanuatu: 
+  id: 233
+  name: Vanuatu
+venezuela: 
+  id: 235
+  name: Venezuela
+vietnam: 
+  id: 236
+  name: Vietnam
+wallis_y_futuna: 
+  id: 239
+  name: "Wallis y Futuna"
+yemen: 
+  id: 240
+  name: Yemen
+yibuti: 
+  id: 241
+  name: Yibuti
+zambia: 
+  id: 242
+  name: Zambia
+zimbabue: 
+  id: 243
+  name: Zimbabue

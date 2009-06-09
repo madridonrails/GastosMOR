@@ -1,0 +1,7 @@
+<span class="saldo">
+<% if @current_user.balance >= 0%>
+    <span class="suma">+ </span><span class="saldo" id="saldo"><%= format_money(@current_user.balance)+" €"%></span>
+<% else %>
+    <span class="resta">- </span><span class="saldo" id="saldo"><%= format_money(@current_user.balance * -1)+" €"%></span>
+<% end %>
+</span>

@@ -1,0 +1,36 @@
+<div class="Title24Orange" id="titlearea">
+  Crea tu cuenta GRATIS
+</div>
+
+<div id="highlightarea2">
+  <div id="textarea"  class="Text13Grey">
+    <%= form_tag({:action => :signin},{:id=>'form_signin'})  %>
+    <%= display_flash_notice %>
+    <%= display_flash_error %>
+    <div class="bloque">
+      <div class="Title14Orange">Accede a tus gastos en <%=@enterprise.name%></div>
+      <div id="divider"><%= image_tag 'px.gif' %></div>
+      <br />
+      <div style='clear:left'>
+      	<div class="caja215">Email<span class="obligatorio">*</span><br/>
+          <%= text_field 'user', 'email', :class => 'formField' %>
+        </div>
+        <div class="caja215">Contrase&ntilde;a <span class="obligatorio">*</span><br/>
+          <%= password_field_tag 'password', nil, :class => 'formField' %>
+        </div>
+      </div>   
+    </div>
+    <div class="bloque">	    
+      <div style='clear:left'>
+        <br/>Si has olvidado tu contraseña escribe tu dirección de email y haz click <%= link_to_function('aqui',"var f=$('form_signin'); f.action='#{url_for(:action => :new_password)}'; f.submit();",{:class=>"entexto", :tabindex=>'4'})%>. Te enviaremos una nueva por e-mail.
+      </div>
+    </div>
+    <div class="bloque">	    
+    	<div class="cierre">
+        <br/><%= submit_tag "Entrar", :class => 'button' %>
+      </div>	
+    </div>
+    <%= end_form_tag %>      
+  </div>
+</div>
+

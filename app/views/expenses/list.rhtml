@@ -1,0 +1,38 @@
+<% require_bundle :dynarch_calendar, :color => 'ASPgems',:language => 'es' %>
+<% if request.xhr?%>
+    <%= render_component :controller=>'bulk_expenses', :action => 'list'%>
+<% else %>
+   	<div id="tablaDatos">                         
+      <% display_flash_error %>
+      <%= render :partial => 'help/bannerhelp',:locals=>{:page=>'expenses'}%>
+      
+      <% new_params = params.merge(:scaffold_id => 'bulk_expense', :controller => '/bulk_expenses', :action => 'new') %>
+      <br/>
+      <%= loading_indicator_tag(new_params) %>
+      <%= link_to_remote 'A&ntilde;adir un nuevo gasto' + image_tag("ico_mas.gif", {:title=>'nuevo gasto',:vspace => '5', :border => '0', :align => 'absmiddle'}),
+        { :url => new_params,
+          :loading => "Element.show('#{loading_indicator_id(new_params)}');" ,
+          :condition => "!tbodyHasRowIds('bulk_expense-tbody',['create','update'])" },
+        { :href => url_for(new_params), 
+          :class => 'botonerasup',
+          :id => 'add_new_expense' } %> 		 
+      |&nbsp;&nbsp;
+      <% new_params ={:controller => '/bulk_expenses', :action => 'import'} %>
+      <%= loading_indicator_tag(new_params) %>
+      <%= link_to_remote "Importar gastos "+image_tag("ico_csv.gif",:title=>'importar de csv',:alt=>"importar de csv",:vspace=>"5", :border=>"0",:align=>"absmiddle"),                    
+         { :url => new_params,
+           :loading => "Element.show('#{loading_indicator_id(new_params)}');" ,
+           :condition => "!tbodyHasRowIds('import_form',['import'])" },
+         { :href => url_for(new_params),
+           :class => "botonerasup" } 
+      %>    
+      |&nbsp;&nbsp;
+      <a href="expandir filtro" class="botonerasup" target="_blank" onclick="document.getElementById('filter').style.height='135px'; return false;">Filtrar la información<%=image_tag("ico_filtrar.gif",:title=>'filtrar',:alt=>"filtrar",:vspace=>"5", :border=>"0",:align=>"absmiddle")%></a>        
+      <br/><br/>
+      <%= render :partial => 'filter' %>
+      <div id="listing_sinfondoazul">
+        <%= render_component :controller=>'bulk_expenses', :action => 'list'%>
+      </div>                
+    </div>                
+<% end #if request.xhr%>              
+

@@ -1,0 +1,36 @@
+<% require_bundle :dynarch_calendar,:color => 'ASPgems',:language => 'es' %>
+<% if request.xhr?%>
+    <%= render_component :controller=>'bulk_payments', :action => 'list'%>
+<% else %>
+   	<div id="tablaDatos">                         
+      <% display_flash_error %>
+      <%= render :partial => 'help/bannerhelp',:locals=>{:page=>'payments'}%>
+      <% if @page_payer && @current_user.is_payer? %>
+        <% new_params = params.merge(:scaffold_id=>'bulk_payment',:controller => '/bulk_payments', :action => 'new') %>
+        <br/>
+        <%= loading_indicator_tag(new_params) %>
+        <%= link_to_remote "Añadir un nuevo pago"+image_tag("ico_mas.gif",:title=>'nuevo pago',:alt=>"nuevo pago",:vspace=>"5", :border=>"0",:align=>"absmiddle"),
+          { :url => new_params,
+            :loading => "Element.show('#{loading_indicator_id(new_params)}');" },
+          { :href => url_for(new_params),
+            :class => "botonerasup" } %>
+        |&nbsp;&nbsp;
+        <% new_params ={:controller => '/bulk_payments', :action => 'import'} %>
+        <%= loading_indicator_tag(new_params) %>
+        <%= link_to_remote "Importar pagos "+image_tag("ico_csv.gif",:title=>'importar de csv',:alt=>"importar de csv",:vspace=>"5", :border=>"0",:align=>"absmiddle"),           
+         { :url => new_params,
+           :loading => "Element.show('#{loading_indicator_id(new_params)}');" ,
+           :condition => "!tbodyHasRowIds('import_form',['import'])" },
+         { :href => url_for(new_params),
+           :class => "botonerasup" } 
+        %>
+        |&nbsp;&nbsp;
+      <%end %>                            
+      <a href="expandir filtro" class="botonerasup" target="_blank" onclick="document.getElementById('filter').style.height='125px'; return false;">Filtrar la información<%=image_tag("ico_filtrar.gif",:title=>'filtrar',:alt=>"filtrar",:vspace=>"5", :border=>"0",:align=>"absmiddle")%></a>
+      <br/><br/>
+      <%= render :partial => 'filter' %>
+      <div id="listing_sinfondoazul">
+          <%= render_component :controller=>'bulk_payments', :action => 'list'%>
+      </div>
+    </div>
+<% end #if request.xhr %>              

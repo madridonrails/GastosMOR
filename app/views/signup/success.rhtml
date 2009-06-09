@@ -1,0 +1,18 @@
+<div class="Title24Orange" id="titlearea">
+  Registro realizado
+</div>
+
+<div id="highlightarea2">
+  <div id="textarea"> 
+    <p class="Title18DarkGrey">Ya te has registrado en <%= APP_NAME %></p>
+    <table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="Text13Grey">
+          <strong>En breve recibir&aacute; un correo en la direcci&oacute;n que nos has proporcionado con instrucciones para activar tu cuenta.<br/><br/>
+              Si no lo recibes, por favor, ponte en contacto con nosotros.</strong><br><br>
+              <%= link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}), {:controller => 'public', :action=>'home'}) %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

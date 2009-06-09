@@ -1,0 +1,29 @@
+<% # The following is used when the browser doesn't have javascript enabled %>
+<% classAttr = cycle("", "class=\"even\"") %>
+<% @options = params.merge(:controller => '/users', :action => "view", :id => user_supervised.send("#{User.primary_key}")) %>
+
+<tr <%= classAttr %> id="<%= element_row_id(@options) %>" <%= "style=\"display: none;\"" if hidden %>>
+  
+  
+  <td >
+        <%=h(user_supervised.email)%>      
+  </td>
+  <td >
+        <%=h(user_supervised.first_name)%>      
+  </td>
+  <td >
+        <%=h(user_supervised.last_name)%>      
+  </td>
+  <td >
+        <%=user_supervised.is_administrator ? image_tag("ico_estado_ok.gif") : "&nbsp;" %>      
+  </td>
+  <td >
+        <%=user_supervised.is_supervisor ? image_tag("ico_estado_ok.gif") : "&nbsp;" %>      
+  </td>
+  <td >
+        <%=user_supervised.is_payer ? image_tag("ico_estado_ok.gif") : "&nbsp;" %>      
+  </td>
+  <td >
+        <%=format_money(user_supervised.balance)%>      
+  </td>
+</tr>

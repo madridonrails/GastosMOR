@@ -1,0 +1,14 @@
+@reject_options = { :scaffold_id => params[:scaffold_id], :action =>'reject', :id => params[:id] }
+@view_options = { :scaffold_id => params[:scaffold_id], :action =>'view', :id => params[:id] }
+
+if @successful  
+  page.remove element_row_id(@view_options)
+  page.insert_html :bottom, scaffold_tbody_id(@view_options), :partial => 'expense', :locals=>{:expense=>@expense,:hidden=>false}
+  page << "new TableRow.MoveAfter('#{element_row_id(@reject_options)}', '#{element_row_id(@view_options)}');"
+  page.remove element_row_id(@reject_options)
+  page.show element_row_id(@view_options)  
+else
+  page.replace_html element_messages_id(@reject_options), :partial => 'form_messages'
+  page << "Form.enable('#{element_form_id(@reject_options)}');"
+  page.hide loading_indicator_id(@reject_options)
+end  

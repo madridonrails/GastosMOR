@@ -1,0 +1,8 @@
+<% require_bundle :dynarch_calendar,:language => 'es',:color => 'ASPgems' %>
+<div id="tablaDatos">
+  <a href="expandir filtro" class="botonerasup" target="_blank" onclick="document.getElementById('filter').style.height='105px'; return false;">Filtrar la información<%=image_tag("ico_filtrar.gif",:title=>'filtrar',:alt=>"filtrar",:vspace=>"5", :border=>"0",:align=>"absmiddle")%></a>
+  <%= render :partial => 'filter' %>                        
+  <div id="listing">	
+      <%= render_component :controller => '/enterprises', :action => 'component', :params => params %>           
+  </div>
+</div>

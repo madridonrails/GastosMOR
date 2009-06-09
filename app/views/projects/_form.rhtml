@@ -1,0 +1,22 @@
+<fieldset>
+  <div class="row">
+    <!--[form:project]-->
+<div class="form-element">
+  <label for="project_name">Nombre<span class="obligatorio">*</span></label>
+  <%= text_field 'project', 'name' , {:class=>"text-input"} %>
+</div>
+
+<div class="form-element">
+  <label for="project_description">Descripci&oacute;n</label>
+  <%= text_field 'project', 'description' , {:class=>"text-input"} %>
+</div>
+
+<div class="form-element">
+<label for="supervisor_id">Supervisor<span class="obligatorio">*</span></label>
+<%= select 'project', 'supervisor_id', supervisor_combo(@enterprise), {:prompt => 'Selecciona el supervisor'}%> 
+</div>
+
+<!--[eoform:project]-->
+
+  </div>
+</fieldset>

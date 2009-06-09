@@ -1,0 +1,17 @@
+<fieldset>
+  <div class="row">
+    <!--[form:expense_type]-->
+<div class="form-element">
+  <label for="expense_type_description">Descripción<span class="obligatorio">*</span></label>
+  <%= text_field 'expense_type', 'description' , {:class=>"text-input"} %>
+</div>
+
+<div class="form-element">
+<label for="parent_id">Tipo de gasto</label>
+<%= select 'expense_type', 'parent_id', expense_type_combo(@enterprise), {:prompt => 'Selecciona el tipo padre'}%> 
+</div>
+
+<!--[eoform:expense_type]-->
+
+  </div>
+</fieldset>

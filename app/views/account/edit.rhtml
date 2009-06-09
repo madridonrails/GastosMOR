@@ -1,0 +1,36 @@
+<div id="tablaDatos">
+  <% @options = { :scaffold_id => 'enterprise', :action => "edit"}%>
+  <%= display_flash_notice %>
+  <%= display_flash_error %>
+  <%= error_messages (@enterprise.errors)%>
+  
+  <table >
+  <tbody>
+  <tr>
+  <td>
+  <%= start_form_tag({:action=>'save_account'}, :multipart => true) %>
+    
+      <div class="titulo_secundario">Personaliza tu aplicación</div>   
+      <div class="bloque">
+          Tu dirección de acceso personalizada es <b>http://<%=@enterprise.short_name%>.<%= DOMAIN_NAME %></b>                                			     	        	   
+      </div>
+      <div class="bloque">
+        <div class="caja215">
+          Empresa<span class="obligatorio">*</span><br/>
+          <%= text_field 'enterprise', 'name' , {:class=>'form180'} %>
+        </div>          
+        <div class="caja215">
+          Sube tu logo<br/>
+          <%= file_field_tag 'file_logo', {:class=>'form180'} %>
+          &nbsp;
+          <%= submit_tag "Aceptar", :class => "submit" %>
+        </div>
+      </div>
+
+  <%= end_form_tag %>
+  </tr>
+  </td>
+  </tbody>
+  </table>
+</div>
+

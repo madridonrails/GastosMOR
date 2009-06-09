@@ -1,0 +1,5 @@
+page.insert_html :top, 'import_form', :partial => 'import_csv'
+page.show 'import_row'
+page.visual_effect :highlight, 'td_import_csv'
+
+page.hide loading_indicator_id({ :controller=>'users', :action => 'import'})

@@ -1,0 +1,27 @@
+<fieldset>
+  <div class="row">
+    <!--[form:project]-->
+<div class="form-element">
+  <label for="enterprise_name">Nombre<span class="obligatorio">*</span></label>
+  <%= text_field 'enterprise', 'short_name' , {:class=>"text-input"} %>
+</div>
+
+<div class="form-element">
+  <label for="enterprise_description">Descripci&oacute;n</label>
+  <%= text_field 'enterprise', 'name' , {:class=>"text-input"} %>
+</div>
+
+<div class="form-element">
+<label for="is_bloqued">Bloqueada</label>
+<%= check_box 'enterprise', 'is_blocked', {},checked_value=true, unchecked_value=false %>
+</div>
+
+<div class="form-element">
+<label for="activation_code">Activada</label>
+<%=@enterprise.account_owner.activation_code.blank? ? image_tag('ico_estado_ok.gif') : image_tag('ico_estado_no.gif')  %>
+</div>
+
+<!--[eoform:enterprise]-->
+
+  </div>
+</fieldset>

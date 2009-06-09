@@ -1,0 +1,76 @@
+<fieldset>
+<div class="row">
+		<!--[form:expense]-->
+<% if @current_user.is_supervisor? || @current_user.is_account_owner? -%>
+<div class="form-element">
+<label for="user_id"><b>Usuario</b></label>
+<label><%= @expense.user ? display_user(@expense.user) : ''%></lable>
+</div>
+<%end %>
+
+<div class="form-element">
+<label for="date"><b>Fecha</b></label>
+<label><%=@expense.date.strftime( "%d/%m/%Y")%></label>
+</div>
+
+<div class="form-element">
+<label for="expense_amount"><b>Importe</b></label>
+<label><%=format_money(@expense.amount)%></label>
+</div>
+
+<div class="form-element">
+<label for="description"><b>Concepto</b></label> 
+<label><%=@expense.description %></label>
+</div>
+
+<div class="form-element">
+<label for="expense_type_id"><b>Tipo de gasto</b></label>
+<label><%= @expense.expense_type.description%></label> 
+</div>
+
+</div>
+
+<div class="row">        
+    <div class="form-element">
+        <label for='project_id'><b>Proyecto</b></label>
+        <label><%= @expense.project.name%></label>
+    </div>
+    
+    <div class="form-element">
+        <label for="status"><b>Estado</b></label>    
+        <label><%= ExpenseStatus.get_text @expense.status %></label>   
+    </div>    
+    <div class="form-element">
+        <label for="envelope"><b>Sobre</b></label>
+        <label><%=@expense.envelope %></label>
+    </div>
+    <div class="form-element">
+        <label for="envelope"><b>Forma Pago</b></label>
+        <label><%=PaymentType.combo[@expense.payment_type][0] %></label>
+    </div>
+</div>
+
+<div class="row">
+
+<div class="form-element">
+<label for="comments"><b>Comentarios</b></label>
+<%= text_area 'expense', 'comments', :rows => "10", :readonly=>true, :disabled=>true %>
+</div>
+
+<% if allow_reject%>
+<div class="form-element">
+<label for="comments"><b>¿Por qué se rechaza el gasto?</b></label>
+<%= text_area 'expense', 'revision_note', :rows => "10" %>
+</div>
+<% else %>
+<div class="form-element">
+<label for="revision_note"><b>Notas de revision</b></label>
+<%= text_area 'expense', 'revision_note', :rows => "10",:readonly=>true %>
+</div>
+<%end%>
+
+
+<!--[eoform:expense]-->
+
+</div>
+</fieldset>

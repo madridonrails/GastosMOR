@@ -1,0 +1,101 @@
+<%= render :partial=>'login_box'%>
+
+        <div class="centrocentrohome">
+        <br/>
+        <span class="titulo_principal">El problema de la hoja de gastos</span>   
+        <br/> <br/> 
+           <div class="respuesta">
+           La gestión de los gastos es siempre un problema. Aunque nunca es lo suficentemente grave como
+           para ser una prioridad, y 
+           por eso las empresas pequeñas no le dedican atención. Pero el problema crece con
+           el tamaño de la empresa. Y, en poco tiempo
+           es fácil que haya más de una persona dedicándose a su gestión.
+            </div>
+            <br/>
+              <span class="titulos_cajas">El problema</span>
+              <br/>
+              <br/>    
+              <div class="respuesta">
+              Todas las organizaciones sufren el problema de las hojas de gastos, las más grandes, 
+              tras inversiones nada despreciables ya lo han automatizado. 
+              <%= APP_NAME %> resuelve el problema para que las organizaciones más pequeñas tengan acceso
+              a las mismas ventajas competitivas.
+              <br/>
+              <br/>
+              Cuando la empresa crece, el número de gastos crece, la cantidad de justificantes también,
+              y con ello la necesidad de construir circuitos de aprobación de cada gasto.
+              </div>           
+              <br/>
+            <span class="titulos_cajas">La hoja de gastos: la solución tradicional</span>
+              <br/>
+              <br/>    
+              <div class="respuesta">
+              La respuesta inmediata es la hoja de gastos, un folio con todos los gastos grapados, en el que
+              el responsable del gasto apunta cada gasto,
+              y además añade otros conceptos. A veces se olvida de meter la fecha, las sumas no siempre salen bien,
+              y además luego las debe revisar el supervisor, y volverlas a sumar.
+              <br/>
+              <br/>
+              Cuando se tienen muchas hojas, y muchos gastos que supervisar 
+              la tendencia natural es no mirarlos en detalle, y aprobar las hojas de gastos enteras.
+              <br/>
+                <br/>
+              Luego la hoja pasa por administración, no sin antes haber perdido alguno de los justificantes
+              por el camino, donde se vuelven a sumar los gastos. 
+              Y finalmente se pasa a contabilidad, en donde se generá el pago.
+              </div> 
+            <br/>
+                 <span class="titulos_cajas">La solución se convierte en el problema</span>
+            <br/>
+            <br/>
+               <div class="respuesta">
+                 Al final la hoja de gastos, diseñada como solución, se ha convertido en el problema.
+                 <br/>
+                 Además ahora las hojas llegan tarde, están incompletas, no vienen aprobadas enteras,
+                 o falta algún justificante.
+                 <br/>
+                 <br/>
+                 Como conscuencia, se relaja el nivel de control, y las hojas se quedan paradas en las bandejas de la empresa.
+                 Los empleados cobrán tarde los gastos adelantados, y en muchos caso se generan descontentos o peticiones de anticipos.
+                 <br/>
+              </div>   
+             <br/>
+
+              <span class="titulos_cajas"><%= APP_NAME %>: diseñada por los que hemos sufrido esos problemas</span>
+             <br/>
+            <br/>
+            <div class="respuesta">
+                <%= APP_NAME %> ha sido diseñada teniendo en cuenta todos estos problemas, y con el objetivo de resolverlos de una manera fácil y de bajo coste.
+                Vea todo lo que <%= APP_NAME %> puede conseguir.
+              </div>   
+               <br/>
+            <br/>
+            <span class="titulo_secundario">No te quedes con dudas</span>
+            <br/>
+            <br/>
+                <div class="respuesta">
+                Consulta nuestra lista de
+                 <%= link_to("preguntas y respuestas", :controller => 'public', :action => 'faq') %> mas frecuentes.
+              </div> 
+              
+            <br/>
+            <br/>
+            <div class="cierre">
+              <%# link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:action=>'back'}) %>              
+              <%= link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:controller =>'public', :action=>'home'}) %> 
+            </div>
+          </div>
+
+      <% content_for(:tip_boxes) do %>        
+        <div class="box">
+          <div class="boxTop"><%= image_tag("px.gif", :height => '7') %></div>
+          <div class="boxInner">
+            <span class="titulo_tercer"><%= APP_NAME %>:<br/> La solución.</span>    
+            <div class="titulo_sector">Sin hojas de gastos </div>
+            <div class="titulo_sector">Sin tener que repetir las mismas sumas</div>
+            <div class="titulo_sector">Desde cualquier parte</div>
+            <div class="titulo_sector">Sin instalación</div>
+            <div class="titulo_sector">Sin inversión</div>
+          </div>
+        </div>
+      <% end %>

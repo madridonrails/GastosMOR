@@ -1,0 +1,18 @@
+# Application name and domain name
+APP_NAME = 'GASTOSgem'
+DOMAIN_NAME = 'gastosgem.com'
+
+# Configuration of Google Analytics
+Rubaidh::GoogleAnalytics.tracker_id = 'UA-1234567-8'
+Rubaidh::GoogleAnalytics.domain_name = DOMAIN_NAME
+Rubaidh::GoogleAnalytics.environments = ['production']
+
+# Configuration of Exception Notifier
+ExceptionNotifier.exception_recipients = %w(development@myspecialweb.com) #E-mails
+ExceptionNotifier.email_prefix = "[#{APP_NAME}-ERROR] "
+
+# Contact emails
+CONTACT_EMAIL_INFORMATION = 'info@gastosgem.com'
+CONTACT_EMAIL_ACCOUNTS = 'soporte@gastosgem.com'
+CONTACT_EMAIL_INVOICES = 'facturacion@gastosgem.com'
+CONTACT_EMAIL_OTHERS = 'soporte@gastosgem.com'

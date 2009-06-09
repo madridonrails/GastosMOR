@@ -1,0 +1,148 @@
+--- 
+approved_foo_foo: 
+  amount: 1000
+  comments: ~
+  created_at: 2007-02-01
+  date: 2007-02-01
+  description: foo
+  description_for_sorting: foo
+  envelope: "Foo Foo febrero 001"
+  expense_type_id: 6
+  id: 1
+  justification_doc: ~
+  justification_docname: ~
+  justification_doctype: ~
+  payment_type: 0
+  project_id: 1
+  revised_at: 2007-02-06
+  revised_by: 1
+  revision_note: ~
+  status: approved
+  updated_at: 2007-02-06
+  user_id: 1
+rejected_foo_foo: 
+  amount: 2000
+  comments: ""
+  created_at: 2007-02-06
+  date: 2007-02-06
+  description: "no aprobado"
+  description_for_sorting: "no aprobado"
+  envelope: "Foo Foo febrero 002"
+  expense_type_id: 9
+  id: 2
+  justification_doc: ~
+  justification_docname: ~
+  justification_doctype: ~
+  payment_type: 0
+  project_id: 2
+  revised_at: 2007-02-06
+  revised_by: 1
+  revision_note: "Prueba rechazo"
+  status: rejected
+  updated_at: 2007-02-06
+  user_id: 1
+pending_foo_foo: 
+  amount: 2500
+  comments: ""
+  created_at: 2007-02-06
+  date: 2007-02-06
+  description: Pendiente
+  description_for_sorting: pendiente
+  envelope: "Foo Foo febrero 002"
+  expense_type_id: 12
+  id: 4
+  justification_doc: ~
+  justification_docname: ~
+  justification_doctype: ~
+  payment_type: 0
+  project_id: 1
+  revised_at: 2007-02-06
+  revised_by: 1
+  revision_note: "Prueba rechazo"
+  status: pending
+  updated_at: 2007-02-06
+  user_id: 1
+pending_bar_foo: 
+  amount: 5000
+  comments: ~
+  created_at: 2007-02-06
+  date: 2007-02-06
+  description: Pendiente
+  description_for_sorting: pendiente
+  envelope: "Bar Foo febrero 001"
+  expense_type_id: 1
+  id: 5
+  justification_doc: ~
+  justification_docname: ~
+  justification_doctype: ~
+  payment_type: 0
+  project_id: 1
+  revised_at: ~
+  revised_by: ~
+  revision_note: ~
+  status: pending
+  updated_at: 2007-02-06
+  user_id: 2
+pending_2_bar_foo: 
+  amount: 3000
+  comments: ~
+  created_at: 2007-02-06
+  date: 2007-02-06
+  description: "Otro pendiente"
+  description_for_sorting: "otro pendiente"
+  envelope: "Bar Foo febrero 001"
+  expense_type_id: 12
+  id: 6
+  justification_doc: ~
+  justification_docname: ~
+  justification_doctype: ~
+  payment_type: 0
+  project_id: 1
+  revised_at: ~
+  revised_by: ~
+  revision_note: ~
+  status: pending
+  updated_at: 2007-02-06
+  user_id: 2
+approved_baz_foo: 
+  amount: 4000
+  comments: ~
+  created_at: 2007-02-06
+  date: 2007-02-06
+  description: Pagado
+  description_for_sorting: pagado
+  envelope: "Baz Foo febrero 001"
+  expense_type_id: 9
+  id: 8
+  justification_doc: ~
+  justification_docname: ~
+  justification_doctype: ~
+  payment_type: 0
+  project_id: 3
+  revised_at: 2007-02-06
+  revised_by: 4
+  revision_note: ~
+  status: approved
+  updated_at: 2007-02-06
+  user_id: 3
+approved_2_baz_foo: 
+  amount: 5000
+  comments: ~
+  created_at: 2007-02-06
+  date: 2007-02-06
+  description: Pagado
+  description_for_sorting: pagado
+  envelope: "Baz Foo febrero 001"
+  expense_type_id: 1
+  id: 10
+  justification_doc: ~
+  justification_docname: ~
+  justification_doctype: ~
+  payment_type: 0
+  project_id: 1
+  revised_at: 2007-02-06
+  revised_by: 4
+  revision_note: ~
+  status: approved
+  updated_at: 2007-02-06
+  user_id: 3

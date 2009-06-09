@@ -1,0 +1,11 @@
+            <div class="bloque">
+              <div class="Title14Orange">Datos del registro</div>
+              <div id="divider">
+                <%= image_tag 'px.gif' %>
+              </div>
+              <br />
+              &iquest;Cu&aacute;l es el nombre de tu empresa u organizaci&oacute;n? <span class="obligatorio">*</span><br/>
+              <%= text_field 'enterprise', 'name', :class => 'formField' %><br/><br/>
+              Elige una direcci&oacute;n personalizada para tu pagina de acceso <span class="obligatorio">*</span><br/>
+              <b>http://<%= text_field 'enterprise', 'short_name', :class => 'formField' %>.<%= DOMAIN_NAME %></b><br/><br/>              
+            </div>

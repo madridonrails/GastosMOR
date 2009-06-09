@@ -1,0 +1,59 @@
+    <div class='hint'>
+      <h2>Importación de pagos</h2>
+      <h3>1. Haz una lista de tus pagos</h3>
+      <p> Necesitarás crear un fichero en formato CSV (valores separados por comas) con la información de los pagos.
+      Hojas de cálculo como Microsoft Excel permiten crear y editar ficheros CSV de forma fácil.</p>
+      <p> El fichero CSV ha de estar formateado como una tabla y debe incluir una cabecera, o primera línea,
+      que define los campos en la tabla. Las cabeceras han de ser: fecha, cantidad, concepto, pagado a y descripción.</p>
+      <p> El campo pagado a ha de contener el email de acceso a <%= APP_NAME %> del usuario que recibe el pago.</p>
+      <br/>
+      <div class="sheet">
+        <i class="u">Ejemplo:</i><br>
+        <table>
+          <tbody>
+            <tr>
+              <th class="r"></th>
+              <th>A</th>
+              <th>B</th>
+              <th>C</th>
+              <th>D</th>
+              <th>E</th>
+            </tr>
+            <tr>
+              <td class="r">1</td>
+              <td><b>fecha</b></td>
+              <td><b>cantidad</b></td>
+              <td><b>concepto</b></td>
+              <td nowrap><b>pagado a</b></td>
+              <td><b>descripción</b></td>
+            </tr>
+            <tr>
+              <td class="r">2</td>
+              <td>12-02-2007</td>
+              <td>128,55</td>
+              <td nowrap>Pago enero</td>
+              <td>juan@dominio.com</td>
+              <td nowrap>Pago de los gastos de enero</td>
+            </tr>
+            <tr>
+              <td class="r">3</td>
+              <td>13-02-2007</td>
+              <td>45,30</td>
+              <td nowrap>Atrasos diciembre</td>
+              <td>luis@dominio.com</td>
+              <td nowrap>Pago de los atrasos de diciembre</td>
+            </tr>
+            <tr>
+              <td class="r">4</td>
+              <td>14-02-2007</td>
+              <td>60</td>
+              <td nowrap>Anticipo febrero</td>
+              <td>maria@dominio.com</td>
+              <td nowrap>Anticipo de gastos de febrero</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <h3> 2. Sube la lista de usuarios en formato CSV </h3>
+    </div>

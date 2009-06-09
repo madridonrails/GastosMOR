@@ -1,0 +1,131 @@
+--- 
+general_1: 
+  description: General
+  enterprise_id: 1
+  id: 1
+  parent_id: ~
+transporte_1: 
+  description: Transporte
+  enterprise_id: 1
+  id: 2
+  parent_id: ~
+taxi_1: 
+  description: Taxi
+  enterprise_id: 1
+  id: 3
+  parent_id: 2
+kilometros_1: 
+  description: Kilometros
+  enterprise_id: 1
+  id: 4
+  parent_id: 2
+tren_1: 
+  description: Tren
+  enterprise_id: 1
+  id: 5
+  parent_id: 2
+avión_1: 
+  description: Avión
+  enterprise_id: 1
+  id: 6
+  parent_id: 2
+parking_1: 
+  description: Parking
+  enterprise_id: 1
+  id: 7
+  parent_id: 2
+manutencion_1: 
+  description: Manutención
+  enterprise_id: 1
+  id: 8
+  parent_id: ~
+hotel_1: 
+  description: Hotel
+  enterprise_id: 1
+  id: 9
+  parent_id: 8
+comidas_clientes_1: 
+  description: "Comidas clientes"
+  enterprise_id: 1
+  id: 10
+  parent_id: 8
+pequeñas_compras_1: 
+  description: "Pequeñas compras"
+  enterprise_id: 1
+  id: 11
+  parent_id: ~
+material_de_oficina_1: 
+  description: "Material de oficina"
+  enterprise_id: 1
+  id: 12
+  parent_id: 11
+otros_1: 
+  description: Otros
+  enterprise_id: 1
+  id: 13
+  parent_id: 11
+general_2: 
+  description: General
+  enterprise_id: 2
+  id: 14
+  parent_id: ~
+transporte_2: 
+  description: Transporte
+  enterprise_id: 2
+  id: 15
+  parent_id: ~
+taxi_2: 
+  description: Taxi
+  enterprise_id: 2
+  id: 16
+  parent_id: 15
+kilometros_2: 
+  description: Kilometros
+  enterprise_id: 2
+  id: 17
+  parent_id: 15
+tren_2: 
+  description: Tren
+  enterprise_id: 2
+  id: 18
+  parent_id: 15
+avión_2: 
+  description: Avión
+  enterprise_id: 2
+  id: 19
+  parent_id: 15
+parking_2: 
+  description: Parking
+  enterprise_id: 2
+  id: 20
+  parent_id: 15
+manutención_2: 
+  description: Manutención
+  enterprise_id: 2
+  id: 21
+  parent_id: ~
+hotel_2: 
+  description: Hotel
+  enterprise_id: 2
+  id: 22
+  parent_id: 21
+comidas_clientes_2: 
+  description: "Comidas clientes"
+  enterprise_id: 2
+  id: 23
+  parent_id: 21
+pequeñas_compras_2: 
+  description: "Pequeñas compras"
+  enterprise_id: 2
+  id: 24
+  parent_id: ~
+material_de_oficina_2: 
+  description: "Material de oficina"
+  enterprise_id: 2
+  id: 25
+  parent_id: 24
+otros_2: 
+  description: Otros
+  enterprise_id: 2
+  id: 26
+  parent_id: 24

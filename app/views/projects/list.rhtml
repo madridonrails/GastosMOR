@@ -1,0 +1,15 @@
+<% require_bundle :dynarch_calendar,:language => 'es',:color => 'ASPgems' %>
+<div id="tablaDatos">
+  <span class="titulo_secundario">Define aquí los proyectos que verán tus usuarios</span>	
+  <%= render :partial => 'help/bannerhelp', :locals => {:page => 'projects'}%>
+  <% new_params = params.merge(:controller => '/projects', :action => 'new') %>
+  <br/><br/><%= loading_indicator_tag(new_params) %>
+  <%= link_to_remote "Añadir un nuevo proyecto" + image_tag("ico_mas.gif",:title=>'nuevo proyecto',:alt=>"nuevo proyecto",:vspace=>"5", :border=>"0",:align=>"absmiddle"),
+          { :url => new_params,
+            :loading => "Element.show('#{loading_indicator_id(new_params)}');" },
+          { :href => url_for(new_params),
+            :class => "botonerasup" } %>
+  <div id="listing">	
+    <%= render_component :controller => '/projects', :action => 'component', :params => params %>           
+  </div>
+</div>

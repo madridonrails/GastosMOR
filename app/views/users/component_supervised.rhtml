@@ -1,0 +1,36 @@
+
+<% if @show_wrapper %>
+<div id="<%= params[:scaffold_id] %>" class="ajax-scaffold">
+<div id="<%= scaffold_content_id(params) %>">
+<% end %>    
+  <table cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <%= render :partial => 'column_headings_supervised' %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="<%= num_columns %>" class="messages-container">
+        <div id="<%= scaffold_messages_id(params) %>">
+          <%= render :partial => 'messages' %>
+        </div>
+        <p id="<%= empty_message_id(params) %>" class="empty-message" <%= " style=\"display:none;\" " if !@users.empty? %>>
+          No hay usuarios
+        </p>
+      </td>
+    </tr>
+  </tbody>
+  <% if !@users.empty? %>
+  <tbody id="<%= scaffold_tbody_id(params) %>">    
+      <%= render :partial => 'user_supervised', :collection => @users, :locals => { :hidden => false } %>    
+  </tbody>
+  <% end %>
+</table>
+<div class="ajax-scaffold-footer">
+  <%= render :partial => 'shared/pagination_links', :locals => { :paginator => @paginator,:control => 'users',:action=>'component_update_supervised' } %>
+</div>
+<% if @show_wrapper %>
+</div>
+</div>
+<% end %>

@@ -1,0 +1,26 @@
+<div class="Title24Orange" id="titlearea">
+  Activa tu cuenta de <%= APP_NAME %>
+</div>
+
+<div id="highlightarea2">
+  <div id="textarea"> 
+    <p class="Title18DarkGrey">Cuenta activada</p>
+    <table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="Text13Grey">
+            <% form_tag :action => "activate" do %>
+              <div class="seccion">Introduce el código de activacion</div>
+              <div class="bloque">            
+                  <br/>
+                  <div class="caja320">
+                  <%= text_field_tag(:activation_code, params[:activation_code], :size=>50 ) %>
+                  </div>
+                  <br/><br/>
+                  <%= image_submit_tag(image_path('bot_enviar.gif'), {:title=>'activar',:alt=>'activar'}) %>
+              </div>
+            <% end %>            
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

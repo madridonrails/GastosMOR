@@ -1,0 +1,86 @@
+<% if !request.xhr? %>
+<div id="filter" >
+<%= form_remote_tag :url => {:controller=>'expenses', :action=> 'list_pending'}, 
+    :update => 'listing_all'%>
+    <div id="persianaarriba"></div> 
+    <a href="recoger filtro" target="_blank" onclick="document.getElementById('filter').style.height='0px'; return false;"><%= image_tag("filter_close.gif", {:title=>'cerrar',:alt=>"cerrar",:align => 'right',:border=>'0'}) %></a>
+    
+    <div class='filter-row'>
+        <div class="filter-col">
+            <label>Fecha del gasto desde:&nbsp;</label>
+        </div>
+        <div class="filter-col">            
+            <%=check_box_tag 'crt_date_from', 1, false %>
+   <%=dynarch_date_select 'expense', 'crt_date_from',:date_format => "%d/%m/%Y"%>      
+        </div>
+        <div class="filter-col">
+            <label>hasta:&nbsp;</label>
+        </div>
+        <div class="filter-col">
+            <%=check_box_tag 'crt_date_to', 1, false %>
+   <%=dynarch_date_select 'expense', 'crt_date_to',:date_format => "%d/%m/%Y"%> 
+        </div>
+    </div>
+    <div class='filter-row'>
+      <div class="filter-col">
+            <label>Estado:&nbsp;</label>
+      </div>
+      <div class="filter-col">
+             <%= select_tag 'crt_status' , options_for_select([['','all']] + @status_combo,@status_selected) %>
+      </div>
+      <div class="filter-col">
+            <label>Usuario:&nbsp;</label>
+      </div>
+      <div class="filter-col">
+             <%= select_tag 'crt_user_id' , options_for_select([nil] + @user_combo) %>
+      </div>
+    </div>
+    <div class='filter-row'>
+        <div class="filter-col">
+            <label>Tipo:&nbsp;</label>
+        </div>
+        <div class="filter-col">            
+            <%= select_tag 'crt_expense_type_id' , options_for_select([nil] + expense_type_combo(@enterprise)) %>      
+        </div>
+        <div class="filter-col">
+            <label>Proyecto:&nbsp;</label>
+        </div>
+        <div class="filter-col">
+            <%= select_tag 'crt_project_id' , options_for_select([nil] + project_combo(@enterprise)) %>
+        </div>
+        <div class="filter-col">
+            <label>Forma Pago:&nbsp;</label>
+        </div>
+        <div class="filter-col">
+              <%= select_tag 'crt_payment_type' , options_for_select([nil] + payment_type_combo(@enterprise)) %>
+        </div>
+    </div>    
+    <div class='filter-row'>
+        <div class="filter-col">
+            <label>Concepto:&nbsp;</label>
+        </div>
+        <div class="filter-col">
+           <%= text_field_tag 'crt_description','' , {:autocomplete => 'off', :class=>"text-input", :size =>15} %> 
+           <div class="auto_complete" id="crt_description_auto_complete"></div> 
+           <%= auto_complete_field :crt_description, :url => { :controller => 'expenses', :action => 'auto_complete_for_filter_expense_pending_description'}%>
+        </div>
+        <div class="filter-col">
+            <label>Sobre:&nbsp;</label>
+        </div>
+        <div class="filter-col">
+           <%= text_field_tag 'crt_envelope','' , {:autocomplete => 'off', :class=>"text-input", :size =>15} %> 
+           <div class="auto_complete" id="crt_envelope_auto_complete"></div> 
+           <%= auto_complete_field :crt_envelope, :url => { :controller => 'expenses', :action => 'auto_complete_for_filter_expense_pending_envelope'}%>
+        </div>        
+    </div>
+ 
+     <div class="filter-row">
+         <div class="filter-col">
+           <%=submit_tag "Filtrar",:class => "submit"%>
+         </div>
+     </div>     
+     <div id="persianaabajo" >             
+     </div>
+<%=end_form_tag%>
+</div>
+<% end%>

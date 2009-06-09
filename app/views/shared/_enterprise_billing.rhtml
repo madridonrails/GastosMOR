@@ -1,0 +1,27 @@
+            <div class="caja215"><br/></div>
+            <div class="bloque">
+             <div class="Title14Orange">Datos de facturación</div>
+             <div id="divider"><%= image_tag 'px.gif' %></div>
+             <br />
+              Indispensables para emitirte la factura correspondiente
+              <div class="caja215">CIF <span class="obligatorio">*</span><br/>
+                <%= text_field 'enterprise', 'cif', :class => 'formField' %>
+              </div>
+              <div class="caja215">Direcci&oacute;n <span class="obligatorio">*</span><br/>
+                <%= text_field 'enterprise', 'address', :class => 'formField' %>
+              </div>
+              <div class="caja215">Poblaci&oacute;n <span class="obligatorio">*</span><br/>
+                <%= text_field 'enterprise', 'city', :class => 'formField' %>
+              </div>
+
+              <div class="caja215">Provincia <span class="obligatorio">*</span><br/>
+                <%= text_field 'enterprise', 'province', :class => 'formField' %>
+              </div>
+              <div class="caja215">C&oacute;digo postal <span class="obligatorio">*</span><br/>
+                <%= text_field 'enterprise', 'postal_code', :class => 'formField' %>
+              </div>
+              <div class="caja215">Pa&iacute;s <span class="obligatorio">*</span><br/>
+                <%= select 'enterprise', 'country_id', countries, {:prompt => 'Selecciona un país'}, {:class => 'formField'}%>                 
+              </div>
+            </div>
+            

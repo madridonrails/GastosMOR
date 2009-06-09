@@ -1,0 +1,8 @@
+@options = { :scaffold_id => params[:scaffold_id], :action => params[:referring_action], :id => params[:id] }
+
+if @successful
+  page.remove element_row_id(@options)  
+  page.show element_row_id(@options.merge(:action => "view"))  
+else
+  page.hide loading_indicator_id(@options)
+end

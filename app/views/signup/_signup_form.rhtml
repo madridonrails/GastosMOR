@@ -1,0 +1,8 @@
+<%= display_flash_error %>
+<%= display_flash_notice %>
+<% form_tag :action => :create_new_user do %>
+  <%= render :partial => 'enterprise_basic'%>
+  <%= render :partial => 'account_owner' %>
+  <%= render :partial => 'accept_and_signup' %> 
+<% end %>
+

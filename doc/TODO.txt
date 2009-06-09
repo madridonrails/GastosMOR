@@ -1,0 +1,70 @@
+[rgo][X]1.  Falta el rol de pagador, no esta como tick al crear un usuario.
+[rgo][X]3. No se sabe quien está conectado. Estaría bien que se vea el usuario que esta conectado.
+[rgo][X]4. El listado de usuarios debe tener el saldo.
+[rgo][X]5. Conectado como usuario normal no hay el usuario de los gastos es siempre el mismo y no deberíat estar la columna.
+[rgo][X]9. En la página de copiar gasto Usuario tiene dos !!
+[rgo][X]10. Cambiar el nombre del campo de Mensaje a "Descripción" y además debe tener un campo de comentarios que sea una caja de texto grande.
+[rgo][X]13. La ordenación por columnas no tiene un comportamiento intuitivo. Ahora ordena por esa columna y mantiene la posicion en el numero de página sobre el nuevo listado. Yo creo que al ordenar deberíamos ir a la primera página.
+[rgo][X]14. El usuario no puede ver los pagos.
+[rgo][X]18. El supervisor debe tener una forma de ver los gastos de sus proyectos y el estado de los mismos.
+[rgo][X]19. El supervisor debe poder ver sus gastos como usuario normal.
+[rgo][X]7. Falta el modulo de exportar a excel
+[rgo][X]8. La entrada de la fecha tiene que ser de otra manera. Un calendario, o otra cosa mas sofisticada. [http://blog.inquirylabs.com/2006/01/26/bundled-resource-v-09-full-dynarch-calendar-support/]
+[rgo][X]23. Añadir columna de ordenacion de usuarios sin privilegios en usuarios y arreglar ordenacion de saldos.
+[rgo][X]22. Asegurar payments (before_filter)
+[rgo][X]20. Al modificar los enlaces puedo ver los gastos de otros!! COMPROBAR EL ID QUE SE PASA
+[rgo][X]25. Al borrar un proyecto o usuario o tipo de gasto se borran todos sus gastos asociados, hacer que tambien borre los ficheros de justificación(comprobar si lo hace) <- Se guarda en la BBDD
+[rgo][X]27. Export revisar los campos de fecha y cantidad (formato!)
+[rgo][ ]21. Al editar un gasto volver a la pagina anterior (puedes ser listado gastos o pendientes)
+[rgo][ ]24. Controlador user: mejorar ordenación de columnas calculadas (a partir de línea 44)
+[rgo][ ]6.  Hace falta un proceso de borrado o paso a copia de seguridad.
+[rgo][ ]26. Leer y si es aplicable hacerlo :-) [http://manuals.rubyonrails.com/read/chapter/47]
+--
+[fxn][X]16. Hay un bug en signing asume que el id del cookie tiene un id valido.
+--
+[cco][X]2. El estilo de los enlaces no visitados no se ve bien. Está demasiado claro.
+[cco][ ]11. Los botones son del año de la tos.
+[cco][ ]12. El usuario no sabe el estado de los gastos en el listado, solo en el detalle.ICONOS
+[cco][ ]15. El boton de nuevo gasto debe estar tambien al inicio de la página y no solo al final.
+[cco][ ]17. Cambiar el literal de pendientes a pendientes de análisis o algo asi.
+[cco][ ]23. Literal de gastos -> "mis gastos"
+[cco][ ]24. Modificar el CSS del calendario y el icono. (vendors/plugins/bundle_resource/...)
+--
+[rgo][X] revisar linea en cabecera
+[rgo][X] gris en cabecera tablas
+[rgo][X] implementar funcionalidad minima de las secciones
+[rgo][X] menu de navegacion arriba con separadores
+[rgo][X] implementar ordenaciones
+[rgo][X] revisar titulos (por ejemplo Gastos en Anticipos)
+[rgo][X] volver <-> listado
+[rgo][X] "Description" en pantalla de nuevo gasto
+[rgo][X] revisar 'Are you sure?'s en vistas
+[rgo][X] quitar paginas, enlaces, y controlador estado gastos  <- expense_status_types
+[rgo][X] quitar paginas, enlaces, y controlador anticipos       <- anticipations
+[rgo][X] quitar paginas, enlaces, y controlador tipo de pago    <- payment_types
+[rgo][X] implementar normalizacion de cantidades
+[rgo][X] revisar paginaciones
+[rgo][X] implementar aprobacion/rechazo de gastos (Ajax si inspiracion)
+[rgo][X] añadir fecha de revision cuando se aprueba/rechaza
+[rgo][X] definir home de usuario, administrador, y supervisor <- Pendiente de implementar supervisor
+[rgo][X] Cambiar pagina de inicio
+[rgo][X] gestion de menu en vistas segun rol
+--
+[fxn][X] uniformar formato formulario de login
+[fxn][X] definir pagina de inicio
+[fxn][X] confirmar password usuario
+[fxn][X] asignacion de supervisor a proyecto
+[fxn][X] implementar exportacion de gastos a Excel (ejemplo)
+[fxn][X] revisar modelo inicial de acuerdo a funcional simplificado
+[fxn][X] añadir roles a modulo de usuarios
+[fxn][X] implementar formula de calculo de saldo
+[fxn][X] quitar database.yml del repositorio
+[fxn][X] quitar log/*.log y db/schema.rb del repositorio
+[fxn][X] añadir soporte para ordenacion normalizada
+[fxn][X] escribir filtro para Content-Type en cabecera HTTP
+[fxn][X] $KCODE en config/environment.rb
+[fxn][X] añadir parametros "encoding: utf-8" a database.yml.example
+[fxn][X] escoger libreria de generacion de Excel y ponerla en vendor
+[fxn][X] añadir :dependent a relaciones
+[fxn][X] si al editar un usuario el flag de supervisor esta a falso poner a NULL
+         la llave foranea en Projects en aquellos que supervisaba, si alguno

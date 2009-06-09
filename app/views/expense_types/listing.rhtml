@@ -1,0 +1,50 @@
+<p align='right'>
+<%= link_to image_tag('add.gif')+'Nuevo Tipo de Gasto', {:action => 'new'}, :class => 'agus-link' %>
+</p>
+<table>
+  <%= 
+     table_header_remote(
+        :labels => ['Tipo', 'Subtipo de','','' ],
+        :update => 'listing',
+        :action => 'listing',
+        :current_page      => 1,
+        :current_order_by  => @current_order_by,
+        :current_direction => @current_direction
+      )
+  %>
+  <%= render :partial => 'expense_type', :collection => @expense_types%>
+</table>
+
+<% if @expense_type_pages.page_count > 1 %>
+<p align='right'>
+<!-- Enlace a pagina anterior -->
+<%= pagination_link_previous 'P&aacute;gina anterior', { :paginator => @expense_type_pages,
+      :update    => 'listing', 
+      :url       => {
+        :action => 'listing',
+        :order_by  => @current_order_by,
+        :direction => @current_direction }}%> 
+<!-- N�meros de p�gina -->
+  <%=
+    pagination_links_remote(
+      :paginator => @expense_type_pages,
+      :update    => 'listing', 
+      :url       => {
+        :action => 'listing',
+        :order_by  => @current_order_by,
+        :direction => @current_direction
+      }
+    )
+  %>
+<!-- Enlace a pagina siguiente -->        
+<%= pagination_link_next 'P&aacute;gina siguiente', { :paginator => @expense_type_pages,
+      :update    => 'listing', 
+      :url       => {
+        :action => 'listing',
+        :order_by  => @current_order_by,
+        :direction => @current_direction }}%> 
+  
+</p>
+<% end %>
+
+<br />

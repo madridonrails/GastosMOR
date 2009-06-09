@@ -1,0 +1,59 @@
+Requerimiento
+-------------
+
+En gastos las tarifas determinan dos variables, numero maximo de usuarios y
+numero maximo de proyectos. Si una cuenta tiene contrados hasta 100 usuarios,
+se le deja crear el 101 y siguientes con un warning que le dice que ha de
+hacer un upgrade.
+
+Se quiere permitir que el usuario rebase esos limites a condicion de que haga
+un upgrade de su tarifa en un cierto plazo de tiempo.
+
+Una cuenta puede hacer upgrade de la tarifa antes de rebasar el limite en
+cualquier caso.
+
+
+Logica de tarifas
+-----------------
+
+La aplicacion ha de ser capaz de saber si el usuario va a realizar una accion
+que necesita comprobacion de la tarifa, no para bloquearle, pero si para
+mostrarle quiza un warning.
+
+Esta logica (o parte de ella) deberia estar encapsulada seguramente en un
+unico modulo que permita consultas en background con script/runner por
+ejemplo. La idea es poder preguntar a la aplicacion por las cuentas que estan
+fuera de tarifa y cosas asi.
+
+Terminologia: De una cuenta que ha rebasado los limites de su tarifa
+contratada diremos que se encuentra en una _extension_.
+
+En gastos, una empresa esta en extension si la suma de sus usuarios o sus
+proyectos excede las condiciones de la tarifa contratada en el momento de la
+consulta. En particular, si creo un proyecto de mas por error y mas tarde lo
+borro, deja de estar en extension a todos los efectos, no hay warnings, no hay
+llamadas.
+
+
+Condiciones de extension
+------------------------
+
+Las extensiones no tienen limite prefijado en el tiempo. Nosotros a mano a
+partir de la base de datos o de algun script (ya sea via un mail interno de
+aviso, ya sea con un proceso batch, ..., no importa) iniciaremos una accion
+comercial cuando consideremos.
+
+Si se decide que una cuenta se esta excediendo en el uso de una extension, la
+bloquearemos. Entonces, o bien paga, o bien se le hace un downgrade borrando
+los usuarios y/o proyectos creados mas recientemente que excedan el limite.
+Quiza se le pueda ofrecer un volcado XML (ha de ser un formato que permita
+representar relaciones) para que pueda conservar los datos en todo caso.
+
+Las empresas pueden hacer uso de extensiones siempre, aunque hubiera sido
+bloqueada anteriormente. La alternativa a eso es añadir un flag que indica si
+puede hacer uso de extensiones, en cuyo caso hay que implementar tanto
+acciones de warning como acciones de bloqueo. Esa complicacion creo que solo
+la justificaria la constatacion de que hay cuentas que hacen un mal uso de las
+extensiones, hasta que tal cosa no suceda aplicaria el principio agile "you
+won't need it".
+

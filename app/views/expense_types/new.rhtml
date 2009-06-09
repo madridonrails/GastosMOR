@@ -1,0 +1,8 @@
+<h1>Nuevo tipo de gasto</h1>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form', :locals => { :expense_type => @expense_type }%>
+  <%= submit_tag "Aceptar" %>
+<% end %>
+
+<%= link_to 'Listado de tipos de gasto', :action => 'list' %>

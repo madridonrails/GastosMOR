@@ -1,0 +1,52 @@
+<% if !request.xhr? %>
+<div id="filter" >
+
+<%= form_remote_tag :url => {:controller=>'enterprises', :action=> 'component'}, 
+    :update => 'listing'%>
+    <div id="persianaarriba"></div> 
+    <a href="recoger filtro" target="_blank" onclick="document.getElementById('filter').style.height='0px'; return false;"><%= image_tag("filter_close.gif", {:title=>'cerrar',:alt=>"cerrar",:align => 'right',:border=>'0'}) %></a>
+    <div class='filter-row'>
+        <div class="filter-col">
+            <label>Fecha de alta:&nbsp;</label>
+        </div>
+        <div class="filter-col">
+            <label>desde:&nbsp;</label>
+        </div>
+        <div class="filter-col">            
+            <%=check_box_tag 'crt_date_from', 1, false %>
+   <%=dynarch_date_select 'filter', 'crt_date_from',:date_format => "%d/%m/%Y"%>      
+        </div>
+        <div class="filter-col">
+            <label>hasta:&nbsp;</label>
+        </div>
+        <div class="filter-col">
+            <%=check_box_tag 'crt_date_to', 1, false %>
+   <%=dynarch_date_select 'filter', 'crt_date_to',:date_format => "%d/%m/%Y"%> 
+        </div>
+    </div>   
+    <div class="filter-row">
+         <div class="filter-col">
+            <label>Nombre</label>          
+            <%= text_field_tag 'crt_name','' , {:autocomplete => 'off', :class=>"text-input", :size =>15} %> 
+         </div>
+         <div class="filter-col">
+            <label>Activada</label>         
+            <%=select_tag 'crt_is_active', options_for_select([nil]+ sino_combo ) %>            
+         </div>
+         <div class="filter-col">
+            <label>Bloqueada</label>         
+            <%=select_tag 'crt_is_blocked', options_for_select([nil]+ sino_combo ) %>            
+         </div>            
+    </div>
+ 
+     <div class="filter-row">
+         <div class="filter-col">
+           <%=submit_tag "Filtrar",:class => "submit"%>
+         </div>
+     </div>
+     
+    <div id="persianaabajo" >             
+    </div>
+  <%=end_form_tag%>
+</div>
+<% end%>

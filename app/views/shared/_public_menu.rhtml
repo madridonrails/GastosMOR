@@ -1,0 +1,15 @@
+<%# force the following LIs to be in a single line, because otherwise grey bars appear in between %>
+  <%
+   menu = [      
+      ['index',  'INICIO'],
+      #['tour',   'TOUR'],
+      ['help',   'AYUDA'],
+      ['contact', 'CONTACTO'],
+      ['signup', 'REGISTRO'],
+      ['login',  'LOGIN']
+    ].map do |action, label|
+      # Use full URLs in case we are not in the home.
+      "<li>#{link_to label, :controller => 'public', :action => action}</li>"
+    end.join("<li>#{image_tag "grey-px.gif", :width => 1, :height => 1}</li>")
+  %>
+  <ul><%= menu %></ul>

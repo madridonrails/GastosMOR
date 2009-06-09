@@ -1,0 +1,89 @@
+--- 
+foo@foo.com: 
+  activated_at: 2007-02-01 18:05:29 +01:00
+  activation_code: ~
+  created_at: 2007-02-01 19:04:20 +01:00
+  crypted_password: 1466e3caf5df85d763ddc90f9ebab68585d19282
+  email: foo@foo.com
+  enterprise_id: 1
+  first_name: Foo
+  first_name_for_sorting: foo
+  id: 1
+  is_administrator: true
+  is_blocked: false
+  is_gestor: false
+  is_payer: true
+  is_supervisor: true
+  last_name: Foo
+  last_name_for_sorting: foo
+  remember_token: ~
+  remember_token_expires_at: ~
+  salt: bf7750f06fa8dfe1d8a410834f2206d366945361
+  supervisor_id: ~
+  updated_at: 2007-02-01 19:05:29 +01:00
+bar@foo.com: 
+  activated_at: 2007-02-05 17:33:38 +01:00
+  activation_code: ~
+  created_at: 2007-02-05 18:33:38 +01:00
+  crypted_password: bf44d4b5d2a32f8c92122072d62aa7d2d588c33f
+  email: bar@foo.com
+  enterprise_id: 1
+  first_name: Bar
+  first_name_for_sorting: bar
+  id: 2
+  is_administrator: false
+  is_blocked: false
+  is_gestor: false
+  is_payer: false
+  is_supervisor: true
+  last_name: Foo
+  last_name_for_sorting: foo
+  remember_token: ~
+  remember_token_expires_at: ~
+  salt: f23e09fe6ffdc3f3eb44bf008f34d3c12641cf4c
+  supervisor_id: 1
+  updated_at: 2007-02-05 18:34:48 +01:00
+baz@foo.com: 
+  activated_at: 2007-02-05 17:34:05 +01:00
+  activation_code: ~
+  created_at: 2007-02-05 18:34:05 +01:00
+  crypted_password: 4e0dd4b4a94e8d51112312fa032504d750c55dc2
+  email: baz@foo.com
+  enterprise_id: 1
+  first_name: Baz
+  first_name_for_sorting: baz
+  id: 3
+  is_administrator: false
+  is_blocked: false
+  is_gestor: false
+  is_payer: false
+  is_supervisor: false
+  last_name: Foo
+  last_name_for_sorting: foo
+  remember_token: ~
+  remember_token_expires_at: ~
+  salt: 4d59fe36377917c7f341e09499a51328dcb2bcbf
+  supervisor_id: 2
+  updated_at: 2007-02-05 18:34:56 +01:00
+bar@bar.com: 
+  activated_at: 2007-02-05 17:38:39 +01:00
+  activation_code: ~
+  created_at: 2007-02-05 18:38:19 +01:00
+  crypted_password: 8c790878abea1873ef20c0a66c41ba865943595b
+  email: bar@bar.com
+  enterprise_id: 2
+  first_name: Bar
+  first_name_for_sorting: bar
+  id: 4
+  is_administrator: true
+  is_blocked: false
+  is_gestor: false
+  is_payer: true
+  is_supervisor: true
+  last_name: Bar
+  last_name_for_sorting: bar
+  remember_token: ~
+  remember_token_expires_at: ~
+  salt: e27bbd3193deebeda1ded263ee8d320b1fa42c9e
+  supervisor_id: ~
+  updated_at: 2007-02-05 18:38:39 +01:00

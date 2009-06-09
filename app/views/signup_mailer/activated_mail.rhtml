@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <title><%= APP_NAME %></title> 
+  </head> 
+  <body>
+    <br/>Bienvenido a <%= APP_NAME %>.
+
+    <br/><br/>Tu cuenta ya está activada.
+    <br/><br/>Guarda este mail como recordatorio de tu página privada.
+
+    <br/><br/>Recuerda que para  acceder a tu cuenta <%= APP_NAME %> sólo tienes que visitar este enlace:
+
+	  <br/><br/><a href='<%= @access_link %>'><%= @access_link %></a>
+
+    <br/><br/>El usuario será siempre la dirección de mail que nos has dado.
+ 
+    <br/><br/>Saludos,
+
+    <br/><br/>-- <%= APP_NAME %>
+
+  </body>  
+</html> 
+

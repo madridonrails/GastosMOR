@@ -1,0 +1,321 @@
+
+1.19
+--------------
+- Backoffice. Se recota los textos en el listado de empresas para que no se descuadre la tabla
+- Ticket #262. Excepción no contrala al borrar usuario que no tiene gastos pero si tiene supervisados.
+- Ticket #264. Como ahora los gastos estan filtrados
+  Añadido texto explicativo.
+- Ticket #263  Cuando hay un filtro por fecha. La pagina pierde estos campos en las llamadas siguientes a la primera.
+  Se ha añadido 2 filtros, uno que guarda en la sesion los parametros de los filtros (tienen que llamarse
+  crt_xxxx) y otro que los resetea cuando se entra desde el principio, para que no se mezclen filtros.
+
+1.18 2007/03/19
+---------------
+- En pagina de backoffice-empresas se ve un '>'. Se ha solucionado y eliminado de donde corresponde.
+- Ticket #260. Cuando se filtra en los gastos aprobados, la paginación no funciona.
+  En la paginacion se tenia en cuenta los posibles valores del filtro.
+  En pagina de administrar gastos el link de paginacion no iba al controlador correcto.
+  Añadido filtro de estado a pagina de administrar gastos (igual que en el resto de paginas).  
+- Borrado de datos de empresa. Al borrar los usuarios hay que tener en cuenta la restriccion del supervisor
+  en la tabla de usuarios. Pone a null el supervisor antes de borrar.
+  Poner el parent_id de expenses_types a null antes de borrar.
+- Administracion de empresas desde backoffice. Añadido campo de usuario propietario de la cuenta al listado.
+- Ticket #239 Sabias que? en mi perfil corresponde a lista de usuarios. Modificado texto.
+- Ticket #261 El boton de inicio arriba del todo creo que sobra.
+- Backoffice. Listado Empresas añadido campo fecha de alta. Añadido al filtro de busqueda.
+- Backoffice. Desde la edición de empresas se puede cambiar el plan, es un caso especial por lo que no pide
+  datos de facturación. El usuario no podra cambiar datos de su cuenta hasta que meta datos de facturación.
+- Ticket #221. La seleccion del pais debe aparece en España por defecto.
+- Ticket #252. Eliminar las URL largas del mail de activación. Se han pasado todos los emails a formato HTML.
+
+1.17 2007/03/13
+---------------
+- Añadida funcionalidad de backoffice para empresas.
+- Listado de empresas. ordenacion, edicion, borrado.
+- Ticket #241 implementar borrado de empresas
+   Borrado de empresas. OJO se borran todos los datos relacionados con la empresa.
+- Edición de parametros de empresa por el administrador del site.
+- Añadido en las css los estilos de ordenacion de columnas, esto afecta a más tablas dentro de la aplicación,
+  a las que esten hechas con scaffold. Ticket #255 Indicación del campo por el que se ordena.
+- Ticket  #224. Valores por defecto al añadir un gasto. Esta realizado aunque no se cuando se ha hecho.
+- Ticket #249. Mensaje de error cuando la empresa no está activada
+  Se comprueba en el login si la empresa esta activada y si esta bloqueada, añadidos mensajes correspondientes.
+- Ticket #223. Al iniciar sesion los gastos deberían estar ordenados por la fecha de alta. Al entrar en la
+  pagina se ordena por la columna fecha descendente.
+- Ticket #254. Añadir a los filtros el estado del gasto.
+  Añadido filtro de estado del gasto en la pagina de "Gestion de mis gastos"
+  Por defecto se muestran los pendientes.
+- Ticket #250. Mensaje de error al borrar un tipo de gasto que tiene otros colgando de el.
+  Añadidos estilos para mensajes de error. Cambiado texto "close" por "cerrar".
+- Ticket #242. El estado de los gastos aparece en inglés  
+
+1.16.1 - 2007/03/07
+-------------------
+- En la pagina de alta de usuario se añade el campo de confirmacion de password al añadir, al editar no se muestra
+
+1.16   - 2007/03/06
+-------------------
+- Ticket #246. Añadir verificación del mail en el alta.
+- Ticket #248. Error al exportar activando las opciones "Incluir información de supervision" y "pagos"
+- Ticket #257. IE. No se ven correctamente las cajas de la derecha, aparecen abajo.
+- Ticket #258. Filtro y valor por defecto. Listado de gastos a aprobar
+
+1.15.2 - 2007/02/21
+-------------------
+- Ticket 245. Usuarios no account_owner sin supervisor
+  En el alta se sugiere el último supervisor asignado o el account_owner si no hay ninguno. De esta
+  forma desaparece la opción de no seleccionar supervisor. Además se controla en el modelo. El único
+  usuario que puede no tener supervisor es el account_owner.
+
+1.15.1 - 2007/02/20
+-------------------
+- Ticket 243. El account_owner puede quitarse permisos
+  El account_owner no puede perder ninguno de los tres permisos iniciales, supervisor, administrador
+  y pagador. En la edición de usuarios, en caso de editar el account_owner, se muestran iconos en
+  lugar de checkboxes para esas tres opciones.
+- Corregido borrado de gastos desde Adm. de gastos (ExpensesController#delete no hacía ningún borrado).
+
+1.15 - 2007/02/19
+-----------------
+- Ticket 236. Se ve el password en los logs
+  Puestos todos los datos a filtrar en una sola línea filter_parameter_logging, cada llamada pierde 
+  lo anterior
+- Ticket 204. Poner un sobre por defecto en el alta de gastos
+  Se usa el último sobre utilizado por el usuario, si lo hay, o mmm_001 si no lo hay, donde mmm son 
+  las tres primeras letras del mes en curso
+- Ticket 189. Enlace a login desde pantalla de acceso
+  Se añade una caja de texto para el subdominio y un botón para ir a la pantalla de login de dicho
+  subdominio
+- Ticket 237. Pantalla de error al acceder a signin_form
+  El problema era más general, de control de urls inválidas.
+  Se ha establecido un mecanismo de control que captura las url inválidas y redirige según el caso 
+  (web pública, subdominio sin usuario logado, subdominio con usuario logado).
+  También se han traducido las pantallas 404.html y 500.html. Adicionalmente, la 404.html tiene una
+  redirección automática a la pantalla de inicio (que se redirige según los casos comentados antes)
+- Ticket 195. Explicar saldo positivo/negativo
+  Añadido tooltip con la explicación
+- Ticket 233. Cambio del logo de ASPgems por el de GASTOSgem
+  El logo estaba cambiado, se ha añadido el pie de pantalla con el powered by, y el logo de ASPgems
+  enlazando a la web
+- Ticket 230. La lista de supervisados no es ordenable por el saldo
+  Se ha establecido el código de ordenación específico para el saldo, ya que al ser un campo calculado,
+  no de la bbdd, no servía el código general. El mismo código se ha utilizado para la ordenación de
+  usuarios (pestaña de admin).
+- Ticket 231. Error al cambiar el tema de ASPgems
+  Se ha revisado la validación de nifs y se ha actualizado la cuenta de ASPgems a la que le faltaban
+  datos obligatorios (al haberse dado de alta desde una importación)
+- Ticket 240. Error en enlaces a public/back
+  El error se producía en caso de ser la primera petición de la sesión. Se ha detectado en dos casos
+  generales, googlebot (va directamente al la url, no usa un enlace) y usuarios que mostraban sesión
+  nueva en cada petición (posiblemente por no tener cookies activadas). Se ha solucionado estableciendo
+  una url por defecto en el rails_history que es la que se utiliza si no hay acciones previas.
+- Ticket 217. Comentado link de import de gastos
+  Se ha añadido un bloque de explicación del formato del fichero csv, revisado el proceso de importación
+  y descomentado el enlace
+- Ticket 218. Comentado link de import de pagos
+  Se ha añadido un bloque de explicación del formato del fichero csv, revisado el proceso de importación
+  y descomentado el enlace. Se ha corregido la asignación de usuarios, el import lo realiza el pagador,
+  no el usuario que recibe el pago
+- Ticket 219. Comentado link de import de usuarios
+  Se ha añadido un bloque de explicación del formato del fichero csv, revisado el proceso de importación
+  y descomentado el enlace
+- En mail de activacion de cuenta algunos acentos y revision de redaccion
+- En mail con nuevo password, normalizado nombre de aplicacion a "GASTOSgem"
+- En mail con nuevo password, "Acceda a tu cuenta" -> "Accede a tu cuenta"
+- "Un sobre" es un enlace al FAQ donde se explican los sobres.
+- Modificados tests automáticos por el control establecido relativo al ticket 237.
+- Añadidos tests automáticos para los imports de usuarios, gastos y pagos.
+- Reemplazados varios caracteres ó en la pantalla de términos y condiciones que aparecían como símbolos
+
+1.14
+-----
+- Renombrado signin_form.rhtml a signin.rhtml, se evita el error de redireccionamiento incorrecto.
+
+1.13 - 2007/02/01
+----
+- Añadido plugin exception_notification (http://www.agilewebdevelopment.com/plugins/exception_notifier)
+  Envio de correo en caso de excepcion grave
+- En applicatio.rb/check_authentication se añade la condicion de la empresa en la busqueda del usuario.
+- fix bug en el cambio de password. Error al mostrar mensaje
+- En el short_name de la empresa solo se permiten letras y numeros.
+- Añadida lista de short_names no permitidos en fichero de configuracion.
+- eliminado :private, que es incorrecto.
+- En los imports de usuarios, gatos y pagos. La primera linea del csv se usa de cabecera con 
+  los nombres de los datos. Ojo que solo de modo informativo.
+
+1.12.1
+------
+- Ticket #220. Se pueden ver los gastos de otras personas
+  Revisado en bulk_expenses,bulk_payments,expenses_types,expenses,projects,users
+  se ha añadido un filtro para las opciones correspondientes que comprueba que el id
+  pertenezca a la empresa.
+
+- Ticket #220. Se pueden ver los gastos de otras personas
+  Revisado en bulk_expenses,expenses que el usuario tiene los roles necesarios para
+  cada accion
+
+- Ticket #220. Se pueden ver los gastos de otras personas
+  Revisado en bulk_payments que el usuario tiene los roles necesarios para
+  cada accion
+  
+  
+1.12 - 2007/01/29
+-------------------
+ - Ticket #182 - Añadido autocompletado en filtros
+ - Ticket #185 - Añadida solapa para el administrador "Adm. de gastos" que le permite borrar gastos
+ - Comentados links de import de Gastos, Pagos y Usuarios hasta que se disponga de la ayuda.
+
+1.11.2 - 2007/01/26 
+-------------------
+ - Ticket #204 - Sobre por defecto
+ - cambios en la parte publica
+ - fichero views/expenses/_new_edit.rhtml recuperado, se habia borrado accidentalmente
+ 
+1.11.1 - 2007/01/25
+-------------------
+ - cambios en la home
+ - el logo de la parte public lleva a la home de la parte publica
+
+ 
+1.11 - 2007/01/25
+-----------------
+- Ticket #145 Lo usuarios se tendrían que poder bloquear
+- Ticket #209 Texto alternativo en las imágenes de aprobar y rechazar
+- Ticket #193 (activation_mail.rhtml es necesario enviar tambien el mail del tio dentro del mensaje
+- Ticket #208 Los botones a aprobar rechazar son amarillos en los estilso rojos y azul
+- Ticket #163 Añadir país al darte de alta en la versión gratuita
+- Ticket #169 Filtro de usuarios en aprobación de gastos
+- Ticket #168 Filtro de usuarios en pagos
+- Ticket #179 Posibilidad de carga de usuarios desde un fichero csv.
+- Ticket #180 Importar Gastos y pagos de una hoja csv. PARTE DE IMPORTACION DE GASTOS
+- Ticket #180 Importar Gastos y pagos de una hoja csv. PARTE DE IMPORTACION DE PAGOS
+
+1.10 - 2007/01/23
+-------------
+- Ticket #184 No esta resuelto el acceso del gestor.
+- Ticket #190 Caundo el password esta mal no se deberia borrar el login que se ha escrito.
+- Ticket #191 los mails de contacto a soporte en public/contact deberian ser enlaces mailto:
+- Ticket #196 Boton de ver detalle en listado de resultados
+- Ticket #183 Revisar mensaje que aparece cuando al filtrar no resulta ningun registro
+- Ticket #173 Modificar los valores por defecto de tipos de gasto al crear una empresa
+- Ticket #176 Botón de volver a la home en public
+- Ticket #192 Los mails de soporte no tiene el from correcto(soporte@aspgems.com)
+- Ticket #201 Los logos deben cambiar de tamaño
+
+1.9.1 - 2007/01/23
+-------------------------------
+- Ticket #206 Cambios en textos publicos
+- Ticket #205 La exportación desplaza los datos de las columnas
+- Ticket #200 Si no está el fichero de logo el tema falla
+- Ticket #199 Al subir el logotipo se carga los estilos
+- Ticket #198 Al enviar un mail de activación la dirección de acceso del cliente no está completa.
+
+1.9 - 2007/01/19
+-------------------------------
+- Cambios en textos publicos y mails
+- Ticket #187 El listado de usuarios al crer un pago solo tiene el nombre, falta el apellido
+- To generate and receive a reporting email execute 
+  script/runner ReportMailer.deliver_report_mail
+It includes data about all enterprises created or updated since last report. If there are no reports filed on database, all enterprises stored on database will be reported.
+
+1.8
+-------------------------------
+- Revisado el export
+  Problema con fechas
+  Separador en CSV
+  Nuevos campos
+
+- Textos revisados
+
+- Ticket #135 Foco del raton cuando se cierra un gasto.
+- Ticket #186  Pete al modificar un gasto
+- Ticket #175 Nombre de los temas en castellano
+
+
+- Revisado el export
+  Problema con fechas
+  Separador en CSV
+  Nuevos campos
+
+- Textos revisados
+
+- Ticket #135 Foco del raton cuando se cierra un gasto.
+- Ticket #186  Pete al modificar un gasto
+- Ticket #175 Nombre de los temas en castellano
+
+
+1.7
+-------------------------------
+- Ticket #166 Mail de activación
+- Ticket #164 Crear un nuevo campo que sea el codigo de promocion
+- Ticket #165 Si el usuario que se registra viene de una promoción hay saberlo
+- Ticket #154      Al exportar da un error.
+- Ticket #170 Al añadir ungasto el medio de pago por defecto debe ser efectivo y no tarjeta
+- Ticket #171 Cambiar los combos de tru/false para pagador/admin/etc
+- Ticket #160 HAbría que poner un limite en el servidor para las imagenes
+- Cambios Paypal  y pago
+- Arreglos varios
+
+
+1.6 
+-------------------------------
+- validacion de cuenta corriente
+- Funcionamiento correcto de subir y bajar de plan.
+- Funcionamiento correcto de banner de validacion de plan
+- Remaquetacion de pagina de activación
+- Ticket #126  Control de acceso en funcion del perfil a las distintos controladores de la aplicacion
+- Ticket #113  Añadir forma de pago a los gastos.
+- Ticket #144  Icono de ayuda
+- Ticket #150 Los copys de gestión de mis gastos son los de usuario
+- Ticket #152 La fecha del filtro de la pestaña de mis gastos
+- Ticket #153 El copy de la aprobación de gastos es el de usuarios
+- Ticket #157 Borrado de gastos aprobados
+- Ticket #161 Faltan las condiciones de uso
+- Ticket #159 revisar texto de haber superado un plan
+- Ticket #149 Subject recordatorio de urls: Direcci&oacute;n de acceso a GASTOSgem
+
+
+
+
+1.5
+---------------------------------
+#136      Definir tamaño y dimensiones del logo.      
+#133     Informar de que el dominio esta bien.
+#143     El boton de aceptar alactivar la cuenta debería.
+#131     Añadir página para cambio de plan Cuenta     
+
+- Infraestructura para poner un banner aleatorio en la parte izquierda
+- Validacion de usuario, proyecto y tipo de gasto antes de borrar.
+-  Anyadida pestaña de Plan. Permite actualizar de plan
+una cuenta.
+- Modificaciones pago con PayPal
+- Modificacion textos
+
+1.4
+------------------------------
+- Actualizado pago con paypal
+- Textos revisados en la Home publica
+- #137 Los alt-text de los iconos no corresponden con el significado el icono.
+- #139 No puedo rechazar gastos.
+- #117 Revisar el calculo de saldo total. 
+
+1.3
+--------------------------------
+- anyadido pago de la aplicacion con PayPal
+- anyadido pago de la aplicacion con domiciliacion bancaria
+- Ticket #127 Añadir el campo de fecha de modificación en los listados.
+- Ticket#129 Añadir validación de planes por empresa.
+  Pendientes en este ticket los textos del correo y del banner
+  
+1.2
+---------------------------------
+#88  	La ayuda de mis gastos se debe presentar solo si no hay gastos y debe ir sobre el scaffold  	
+#115 	No sale el JS del calendario 	
+#109 	http://aspgems.gastosgem.com/export 	
+#120 	lso campos tipo de gasto y proyecto deben ir los últimos en el scaffold. 	
+#128 	Registro. Mensajes informativos 
+#105 	Enviar el tipo de plan de la suscripción en el correo de activación 	
+#121 	el hiperenlace para modificar una fecha debería estar en la fecha y no en el boton adjunto.
+
+1.1
+--------------------------------------

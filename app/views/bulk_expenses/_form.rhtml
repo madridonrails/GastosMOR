@@ -1,0 +1,46 @@
+<fieldset>
+<div class="row">
+<!--[form:bulk_expense]-->
+		
+<div class="form-element">
+  <label for="bulk_expense_date">Fecha<span class="obligatorio">*</span></label>
+  <%=dynarch_date_select 'bulk_expense', 'date',:date_format => "%d/%m/%Y"%>
+</div>
+		
+<div class="form-element">
+  <label for="bulk_expense_description">Concepto<span class="obligatorio">*</span></label>
+  <%= text_field_with_auto_complete :bulk_expense, :description, {:class=>"text-input", :size =>15}, :skip_style => true%>  
+</div>
+
+<div class="form-element">
+  <label for="bulk_expense_amount">Importe<span class="obligatorio">*</span></label>
+  <%= text_field 'bulk_expense', 'amount' , {:class=>"text-input", :size =>10,:value => format_money(@bulk_expense.amount)} %>
+</div>
+<div class="form-element">
+  <label for="bulk_expense_envelope">Sobre</label>
+  <%= text_field_with_auto_complete :bulk_expense, :envelope, {:class=>"text-input", :size =>15}, :skip_style => true %>  
+</div>
+<div class="form-element">
+  <label for="bulk_expense_payment_type">Forma Pago<span class="obligatorio">*</span></label>
+  <%= select 'bulk_expense', 'payment_type', payment_type_combo(@enterprise) %>
+</div>
+<div class="form-element">
+  <label for="bulk_expense_expense_type_id">Tipo<span class="obligatorio">*</span></label>
+  <%= select 'bulk_expense', 'expense_type_id', expense_type_combo(@enterprise) %>
+</div>
+<div class="form-element">
+  <label for="bulk_expense_project_id">Proyecto<span class="obligatorio">*</span></label>
+  <%= select 'bulk_expense', 'project_id', project_combo(@enterprise) %>
+</div>		
+</div>
+<div class="row">
+
+<div class="form-element">
+  <label for="bulk_expense_comments">Comentarios</label>
+  <%= text_area 'bulk_expense', 'comments', :rows => "10" %>
+</div>
+
+<!--[eoform:bulk_expense]-->
+
+	</div>
+</fieldset>

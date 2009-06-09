@@ -1,0 +1,10 @@
+@options = { :scaffold_id => params[:scaffold_id], :action => "update", :id => params[:id] }
+@view_options = @options.merge(:action => "view")
+
+  page.insert_html :bottom, scaffold_tbody_id(@view_options),'<tr id="filaaux"></tr>' 
+  page << "new TableRow.MoveAfter('#{element_row_id(@view_options)}', 'filaaux');"
+  page.remove element_row_id(@view_options)
+  page.insert_html :bottom, scaffold_tbody_id(@view_options), :partial => 'expense', :locals=>{:expense=>@expense,:hidden=>false}
+  page << "new TableRow.MoveAfter('filaaux', '#{element_row_id(@view_options)}');"
+  page.remove 'filaaux'
+  page.show element_row_id(@view_options)

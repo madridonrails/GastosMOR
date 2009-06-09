@@ -1,0 +1,5 @@
+<%= render :partial => 'messages' %>
+
+<% unless @company.nil? %>
+<%= error_messages_for_scaffold 'company' %>
+<% end %>

@@ -1,0 +1,11 @@
+
+<h1>Nuevo proyecto</h1>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Crear proyecto" %>
+<% end %>
+<br/>
+
+<%= link_to 'Listado de proyectos', :action => 'list' %>
+

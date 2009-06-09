@@ -1,0 +1,16 @@
+<% require_bundle :dynarch_calendar, :color => 'ASPgems',:language => 'es' %>
+<% if request.xhr? %>
+  <%= render_component :action => 'component_expense_manager', :params =>{:str_conditions => @str_conditions,
+                       :arr_conditions_params => @arr_conditions_params}%>
+<% else %>
+  <div id="tablaDatos">
+    <%= display_flash_notice %>
+    <%= render :partial => 'help/bannerhelp',:locals=>{:page=>'list_pending'} %>
+    <a href="expandir filtro" class="botonerasup" target="_blank" onclick="document.getElementById('filter').style.height='135px'; return false;">Filtrar la información<%=image_tag("ico_filtrar.gif",:title=>'filtrar',:alt=>"filtrar",:vspace=>"5", :border=>"0",:align=>"absmiddle")%></a>
+    <%= render :partial => 'filter_expense_manager' %> 
+    <div id="listing_all">
+      <%= render_component :action => 'component_expense_manager' %>
+    </div>
+  </div>
+<% end #if request.xhr%>
+

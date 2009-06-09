@@ -1,0 +1,62 @@
+<%= render :partial=>'login_box'%>
+
+          <div class="centrocentrohome">
+            <br/>
+            <span class="titulo_principal"><%= APP_NAME %> para cada perfil</span>   
+           <br/>
+          <div class="respuesta">
+           <%= APP_NAME %> entiende que la gestión de gastos necesita de distintos perfiles,
+           y por eso los perfiles son:
+          </div>
+        <br/>
+        <span class="titulos_cajas">Todos pueden:</span>
+            <div class="titulo_sector">Crear, borrar y modificar sus gastos</div>
+            <div class="titulo_sector">Consultar los pagos recibidos</div>
+            <div class="titulo_sector">Exportar todos sus gastos</div>
+        <br/>
+        <br/>
+          <div class="respuesta">
+        A los usuarios se les pueden asignar uno o varios roles, de este modo cambian
+        lo que puede o no puede hacer cada usuario.   
+        <br/>
+        <br/>
+        </div>
+        El permiso de <span class="titulos_cajas">supervisor </span>permite:
+            <div class="titulo_sector">Aprobar, rechazar o modificar gastos de las personas y proyectos que supervisa</div>
+            <div class="titulo_sector">Exportar todos sus gastos o los que supervisa</div>
+            <div class="titulo_sector">Crear, borrar y modificar proyectos</div>    
+            <div class="titulo_sector">Crear, borrar y modificar tipos de gastos</div>                             
+        <br/>
+        El permiso de <span class="titulos_cajas"> pagador </span>  permite:
+            <div class="titulo_sector">Añadir pagos a la base de datos</div>
+            <div class="titulo_sector">Consultar el listado de pagos realizados</div>        
+            <br/>
+        El permiso de <span class="titulos_cajas"> gestor </span>  permite:   
+           <div class="titulo_sector">Ver todos los gastos aprobados de todos los usuarios</div>
+           <div class="titulo_sector">Ver el listado de todos los pagos</div> 
+           <div class="titulo_sector">Exportar los gastos y pagos de todos los usuarios</div>          
+        <br/>
+       El usuario    <span class="titulos_cajas">propietario de la cuenta</span> puede:
+         <div class="titulo_sector">Personalizar el diseño de las páginas</div>                   
+      <br/>
+
+       <div class="cierre">
+          <%# link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:action=>'back'}) %>              
+          <%= link_to(image_tag("bot_aceptar.gif", {:width => '71', :height => '20', :vspace => '5', :border => '0'}),{:controller =>'public', :action=>'home'}) %> 
+         </div>
+     </div>
+
+      <% content_for(:tip_boxes) do %>        
+        <div class="box">
+          <div class="boxTop"><%= image_tag("px.gif", :height => '7') %></div>
+          <div class="boxInner">
+            <span class="titulo_tercer"><%= APP_NAME %>:<br/> La solución.</span>    
+            <div class="titulo_sector">Sin inversión </div>
+            <div class="titulo_sector">Sin riesgos</div>
+            <div class="titulo_sector">Sin mínimos de contratación</div>
+            <div class="titulo_sector">Sin compromisos</div>
+            <div class="titulo_sector">Con la mejor tecnología</div>
+            <div class="titulo_sector">Con la mejor infraestructura</div>
+          </div>
+        </div>
+      <% end %>

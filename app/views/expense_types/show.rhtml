@@ -1,0 +1,8 @@
+<% for column in ExpenseType.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @expense_type.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Editar', :action => 'edit', :id => @expense_type %> |
+<%= link_to 'Listado de tipos de gasto', :action => 'list' %>

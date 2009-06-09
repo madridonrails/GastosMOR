@@ -1,0 +1,99 @@
+<% # The following is used when the browser doesn't have javascript enabled %>
+<% classAttr = cycle("", "class=\"even\"") %>
+<% @options = params.merge(:controller => '/bulk_expenses', :action => "view", :id => bulk_expense.send("#{BulkExpense.primary_key}")) %>
+
+<tr <%= classAttr %> id="<%= element_row_id(@options) %>" <%= "style=\"display: none;\"" if hidden %>>
+
+<!-- FILA DE GASTOS -->
+<!-- Estado -->
+<% column_value = eval(scaffold_columns[0].eval) rescue nil %>
+  <td class='<%= scaffold_columns[0].name %>' >
+<%= status_image_str format_column(column_value) %>
+</td>
+<!-- Fecha -->
+<% column_value = eval(scaffold_columns[1].eval) rescue nil %>
+  <td class='<%= scaffold_columns[1].name %>' >      
+<%=date_eu(Date.parse(format_column(column_value))) %>
+</td>
+<!-- Concepto -->
+<% column_value = eval(scaffold_columns[2].eval) rescue nil %>
+  <td class='<%= scaffold_columns[2].name %>' >
+<%= format_column(column_value) %>
+</td>
+<!-- Tipo -->
+<% column_value = eval(scaffold_columns[3].eval) rescue nil %>
+  <td class='<%= scaffold_columns[3].name %>'>
+<%= format_column(column_value) %>
+</td>
+<!-- Importe -->
+<% column_value = eval(scaffold_columns[4].eval) rescue nil %>
+  <td class='<%= scaffold_columns[4].name %>' >
+<%= format_column(format_money(column_value)) %>
+</td>
+<!-- Proyecto -->
+<% column_value = eval(scaffold_columns[5].eval) rescue nil %>
+  <td class='<%= scaffold_columns[5].name %>' >
+<%= format_column(column_value) %>
+</td>
+<!-- Sobre -->
+<% column_value = eval(scaffold_columns[6].eval) rescue nil %>
+  <td class='<%= scaffold_columns[6].name %>' >
+<%= format_column(column_value) %>
+</td>
+<!-- Forma de pago -->
+<% column_value = eval(scaffold_columns[7].eval) rescue nil %>
+  <td class='<%= scaffold_columns[7].name %>' >
+<%= format_column(column_value) %>
+</td>
+<!-- Fecha Alta -->
+<% column_value = eval(scaffold_columns[8].eval) rescue nil 
+   column_value ||= eval(scaffold_columns[1].eval) rescue nil %>
+  <td class='<%= scaffold_columns[8].name %>' >      
+<%=date_eu(Date.parse(format_column(column_value))) %>
+</td>
+<!-- FIN FILA GASTOS -->
+
+	  
+  <td class="actions">
+    <table cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="indicator-container">
+          <%= loading_indicator_tag(@options) %>
+        </td>
+        <td> 
+          <% unless bulk_expense.approved?%>
+            <% edit_options = @options.merge(:action => 'edit') %>
+ 	        <%= link_to_remote image_tag("ico_edit.gif",:title=>'editar', :alt => 'editar', :border => '0', :hspace => '1'),
+   	                    { :url => edit_options, 
+                          :loading => "Element.show('#{loading_indicator_id(@options)}');",
+                          :condition => "!tbodyHasRowIds('bulk_expense-tbody',['create','update'])" },                          
+   	                    { :href => url_for(edit_options) } %>
+          <%else%>  
+   	        <%=image_tag("px.gif", :border=>"0", :height=>"17",:widht=>"17", :hspace=>"1")%>            
+          <% end -%>   	                    
+   	     </td>
+   	     <td>
+   	     <% new_options = @options.merge(:action => 'new') %>
+ 	        <%= link_to_remote image_tag("ico_copy.gif",:title=>'copiar', :alt => 'copiar', :border => '0', :hspace => '1'),
+   	                    { :url => new_options, 
+                          :loading => "Element.show('#{loading_indicator_id(@options)}');",
+                          :complete => "Element.hide('#{loading_indicator_id(@options)}');" },
+   	                    { :href => url_for(new_options) } %>
+   	     </td>
+   	     
+   	     <td>
+   	     <% unless bulk_expense.approved?%>
+   	       <% delete_options = @options.merge(:action => 'destroy') %>
+ 	         <%= link_to_remote image_tag("ico_trash.gif",:title=>'eliminar', :alt => 'eliminar', :border => '0', :hspace => '1'),
+   	                    { :url => delete_options, 
+   	                      :confirm => 'Confirme que desea eliminar este gasto',
+                          :loading => "Element.show('#{loading_indicator_id(@options)}');" },
+   	                    { :href => url_for( delete_options ) } %>
+   	     <%else%>  
+   	        <%=image_tag("px.gif", :border=>"0", :height=>"17",:widht=>"17", :hspace=>"1")%>            
+         <% end -%>
+   	     </td>
+   	    </tr>
+   	  </table>   	  
+  </td>
+</tr>

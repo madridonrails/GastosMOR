@@ -1,0 +1,68 @@
+<fieldset>
+<!--[form:user]-->
+<div class="row">
+    <div class="form-element">
+      <label for="user_email">Email<span class="obligatorio">*</span></label>
+      <%= text_field 'user', 'email' , {:class=>"text-input"} %>
+    </div>
+    <% if @options[:action]== 'create' %>
+    <div class="form-element">
+      <label for="user_email">Confirmación de email<span class="obligatorio">*</span></label>
+      <%= text_field 'user', 'email_confirmation' , {:class=>"text-input"} %>
+    </div>
+    <% end %>
+    <div class="form-element">
+      <label for="user_supervisor">Supervisor<span class="obligatorio">*</span></label>
+      <%= select 'user', 'supervisor_id', supervisor_combo(@enterprise), :prompt => 'Seleccione usuario' %>
+    </div>
+          
+</div>
+<div class="row">
+    <div class="form-element">
+      <label for="user_first_name">Nombre<span class="obligatorio">*</span></label>
+      <%= text_field 'user', 'first_name' , {:class=>"text-input"} %>
+    </div>
+    <div class="form-element">
+      <label for="user_last_name">Apellidos<span class="obligatorio">*</span></label>
+      <%= text_field 'user', 'last_name' , {:class=>"text-input"} %>
+    </div>
+    <div class="form-element">
+      <label for="user_is_supervisor">Supervisor</label>
+      <%= check_box "user", "is_supervisor", {},checked_value=true, unchecked_value=false unless @user.is_account_owner? %>
+      <%= image_tag 'ico_estado_ok.gif' if @user.is_account_owner? %>
+    </div>
+    <div class="form-element">
+      <label for="user_is_ext">Pagador</label>
+      <%= check_box "user", "is_payer",{},checked_value=true, unchecked_value=false unless @user.is_account_owner? %>
+      <%= image_tag 'ico_estado_ok.gif' if @user.is_account_owner? %>
+    </div>
+    <div class="form-element">
+      <label for="user_is_administrator">Administrador</label>
+      <%= check_box "user", "is_administrator",{},checked_value=true, unchecked_value=false unless @user.is_account_owner? %>
+      <%= image_tag 'ico_estado_ok.gif' if @user.is_account_owner? %>
+    </div>
+    <div class="form-element">
+      <label for="user_is_gestor">Gestor</label>
+      <%= check_box "user", "is_gestor",{},checked_value=true, unchecked_value=false %>
+    </div>
+    
+</div>
+<div class="row">
+  <div class="form-element">
+      <label for="user_password">Password</label>
+      <%= password_field 'user', 'password' , {:class=>"text-input"} %>
+  </div>
+  <div class="form-element">
+      <label for="user_password">Confirmación password</label>
+      <%= password_field 'user', 'password_confirmation' , {:class=>"text-input"} %>
+  </div>
+  <% unless @user.is_account_owner? -%>
+    <div class="form-element">
+      <label for="user_is_blocked">Bloqueado</label>
+      <%= check_box "user", "is_blocked",{},checked_value=true, unchecked_value=false %>
+    </div>
+  <% end -%>
+</div>
+
+  <!--[eoform:user]-->
+</fieldset>

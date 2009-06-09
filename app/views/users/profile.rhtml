@@ -1,0 +1,60 @@
+ 	<div id="tablaDatos">                         
+    <%= display_flash_notice %>
+    <%= display_flash_error %>
+    <%= error_messages (@user ? @user.errors : nil)%>
+    <% @options = { :scaffold_id => params[:scaffold_id], :action => "profile", :id => params[:id] }%>
+    <table class="ajax-scaffold" cellpadding="0" cellspacing="0">
+      <tbody>      
+        <%= form_tag :action=>"save_profile" %>
+        <%= hidden_field_tag "scaffold_id", @options[:scaffold_id] %>      
+        <tr>
+          <td>        
+            <div class="form-element">
+              <label for="user_email">Email<span class="obligatorio">*</span></label>
+              <%= text_field 'user', 'email' , {:class=>"text-input"} %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-element">
+              <label for="user_first_name">Nombre<span class="obligatorio">*</span></label>
+              <%= text_field 'user', 'first_name' , {:class=>"text-input"} %>
+            </div>
+            <div class="form-element">
+              <label for="user_last_name">Apellidos<span class="obligatorio">*</span></label>
+              <%= text_field 'user', 'last_name' , {:class=>"text-input"} %>
+            </div>            
+          </td>
+        </tr>
+        <tr>
+          <td>        
+            <div class="form-element">
+              <label for="user_password">Confirmar contraseña antigua</label>
+              <%= password_field_tag  'old_password' ,nil, {:class=>"text-input",:size=>"30"} %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-element">
+              <label for="user_password">Contraseña nueva</label>
+              <%= password_field 'user', 'password' , {:class=>"text-input"} %>
+            </div>
+              <label for="user_password">Confirmar contraseña nueva</label>
+              <%= password_field 'user', 'password_confirmation' , {:class=>"text-input"} %>
+            </div>        
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="form-footer">        
+              <%= submit_tag "Aceptar", :class => "submit" %>        
+              <%= submit_tag "Limpiar",:name=>"clear", :class => "submit" %>        
+            </p>
+          </td>
+        </tr>
+        <%= end_form_tag %>
+      </tbody>
+    </table>
+  </div>

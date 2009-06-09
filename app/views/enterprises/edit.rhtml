@@ -1,0 +1,8 @@
+<h1>Editar empresa</h1>
+
+<% form_tag :action => 'update', :id => @project do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Guardar' %>
+<% end %>
+
+<%= link_to 'Descartar cambios', :action => 'list' %>
